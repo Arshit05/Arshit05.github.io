@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arshit Dogra — Portfolio</title>
-<meta name="description" content="Portfolio of Arshit Dogra — Product + Data + Technology: workflows turned into shipped, measurable software.">
+<title>Arshit Dogra — Software Engineer Portfolio</title>
+<meta name="description" content="Portfolio of Arshit Dogra — software engineer (B.Tech CSE 2026) building Python, REST API, data and ML systems that are validated against measurable results.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -22,8 +22,9 @@
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-section{padding:64px 0;border-top:1px solid var(--line)}
+.wrap{max-width:1480px;margin:0 auto;padding:0 clamp(24px,4vw,64px)}
+section{padding:clamp(56px,7vw,96px) 0;border-top:1px solid var(--line)}
+@media (min-width:1200px){body{font-size:17px}}
 .eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 h2{font:600 clamp(28px,4vw,40px)/1.15 var(--serif);margin-bottom:28px}
 /* nav */
@@ -32,6 +33,13 @@ nav{display:flex;align-items:center;gap:28px;height:60px}
 .mono{font:500 14px var(--mono);text-decoration:none}
 nav{height:auto;min-height:60px;padding:8px 0;flex-wrap:wrap;gap:10px 20px}
 nav .links{display:flex;gap:8px;margin-left:auto;align-items:center;flex-wrap:wrap}
+#theme{order:1;margin-left:auto}
+nav .links{order:2}
+@media (min-width:1180px){
+  nav{display:grid;grid-template-columns:1fr auto 1fr}
+  nav .links{grid-column:2;grid-row:1;margin:0;justify-content:center;flex-wrap:nowrap}
+  #theme{grid-column:3;grid-row:1;justify-self:end;margin:0}
+}
 .nbtn,.pill{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:500 14px var(--sans);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
 .nbtn:hover,.pill:hover{border-color:var(--accent);transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--accent)}
 .nbtn[aria-current="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -43,15 +51,15 @@ nav .links{display:flex;gap:8px;margin-left:auto;align-items:center;flex-wrap:wr
 .toast.show{opacity:1;transform:translateX(-50%)}
 /* hero */
 .hero{border-top:0;padding:56px 0 48px}
-.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
 .snap{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .snap div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:4px 4px 0 var(--line)}
-.snap b{display:block;font:600 38px/1.1 var(--serif);color:var(--accent)}
+.snap b{display:block;font:600 clamp(38px,4vw,56px)/1.1 var(--serif);color:var(--accent)}
 .snap small{font-size:13px;color:var(--muted)}
 .hero .loc{font:400 13px var(--mono);color:var(--muted);margin-bottom:20px}
 .hero h1{font:600 clamp(48px,8vw,96px)/.95 var(--serif);letter-spacing:-.03em}
 .hero h1 span{color:var(--accent)}
-.hero p{max-width:560px;font-size:19px;color:var(--muted);margin:22px 0 28px}
+.hero p{max-width:680px;font-size:clamp(18px,1.4vw,21px);color:var(--muted);margin:22px 0 28px}
 .hero p b{color:var(--ink);font-weight:600}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:500;border:1px solid var(--ink);transition:transform .15s,box-shadow .15s}
@@ -69,7 +77,10 @@ nav .links{display:flex;gap:8px;margin-left:auto;align-items:center;flex-wrap:wr
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tags span{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:3px 10px;background:var(--bg)}
 /* experience */
-.jobs{list-style:none;padding:0;counter-reset:j}
+.jobs{list-style:none;padding:0;counter-reset:j;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(32px,5vw,80px)}
+.jobs li:last-child{border-bottom:0}
+.jobs li{border-bottom:1px solid var(--line);align-self:start}
+@media (max-width:1000px){.jobs{grid-template-columns:1fr}}
 .jobs li{border-top:1px solid var(--line)}
 .jobs li:last-child{border-bottom:1px solid var(--line)}
 details summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:baseline;padding:20px 0}
@@ -83,11 +94,13 @@ summary .when{font:400 13px var(--mono);color:var(--muted)}
 .detail .stack{font:400 13px var(--mono);color:var(--accent)}
 details[open] .role{color:var(--accent)}
 /* work */
-.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+@media (min-width:1700px){.work{grid-template-columns:repeat(4,1fr)}}
 .proj{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .proj:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--accent)}
 .shot{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,var(--bg),var(--bg) 10px,var(--surface) 10px,var(--surface) 20px);border-bottom:1px solid var(--line);display:grid;place-items:center;font:400 12px var(--mono);color:var(--muted)}
-.proj .body{padding:22px}
+.proj .body{padding:28px;flex:1}
+.proj .more{margin-top:auto;padding-top:14px}
 .proj .meta{font:400 12px var(--mono);color:var(--accent);margin-bottom:8px}
 .proj h3{font:600 24px var(--serif);margin-bottom:6px}
 .proj p{color:var(--muted);font-size:15px}
@@ -124,7 +137,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* product-style additions */
 .kicker{display:inline-flex;gap:8px;align-items:center;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:6px 14px;margin-bottom:20px}
 .kicker i{width:8px;height:8px;border-radius:50%;background:#16a34a;display:inline-block}
-.hero h1{font-size:clamp(34px,5.4vw,64px);line-height:1.05;letter-spacing:-.025em}
+.hero h1{font-size:clamp(34px,5.4vw,84px);line-height:1.05;letter-spacing:-.025em}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .lanes{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 .lanes span{font:500 13px var(--mono);padding:4px 12px;border-radius:6px;border:1px solid var(--line)}
@@ -167,56 +180,41 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <header><div class="wrap"><nav aria-label="Primary">
   <a class="mono" href="#top" aria-label="Back to top">[AD]</a>
   <div class="links">
-    <a class="nbtn" href="#problems">Problems</a><a class="nbtn" href="#work">Case studies</a><a class="nbtn" href="#how">How I work</a><a class="nbtn" href="#experience">Experience</a><a class="nbtn" href="#contact">Contact</a>
+    <a class="nbtn" href="#work">Projects</a><a class="nbtn" href="#how">Skills</a><a class="nbtn" href="#problems">Focus</a><a class="nbtn" href="#experience">Experience</a><a class="nbtn" href="#contact">Contact</a>
     <span class="sep" aria-hidden="true"></span>
-    <a class="nbtn cta" id="resume" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé ↓</a>
-    <button class="nbtn" id="upload" type="button">⬆ Upload résumé</button>
-    <input class="sr" id="file" type="file" accept="application/pdf,.pdf,.doc,.docx" tabindex="-1" aria-label="Choose résumé file">
-    <button class="nbtn" id="theme" type="button" aria-label="Toggle light or dark theme">◐</button>
+    <a class="nbtn cta" id="resume" href="Arshit_Dogra_SDE_Resume.pdf" download>Resume ↓</a>
+    <button class="nbtn" id="upload" type="button">⬆ Upload resume</button>
+    <input class="sr" id="file" type="file" accept="application/pdf,.pdf,.doc,.docx" tabindex="-1" aria-label="Choose resume file">
   </div>
+  <button class="nbtn" id="theme" type="button" aria-label="Toggle light or dark theme">◐</button>
 </nav></div></header>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <main id="top">
 <section class="hero"><div class="wrap">
   <div>
-    <div class="kicker"><i></i> Open to PM · Full Stack · AI internships</div>
-    <h1>I turn messy business workflows into <em>shipped software</em> and decisions you can measure.</h1>
-    <p>Arshit Dogra — Product, Data and Technology in one profile. I write the requirements, build the pipeline, and check the numbers before anyone ships.</p>
-    <div class="btns"><a class="btn primary" href="#work">See what I built</a><a class="btn" href="#contact">Talk to me</a></div>
-    <div class="lanes" aria-label="Three lanes"><span class="p">Product</span><span class="d">Data</span><span class="t">Technology</span></div>
+    <div class="kicker"><i></i> Open to SDE · Full Stack · AI/ML internships</div>
+    <h1>I build <em>reliable software</em>: APIs, data pipelines and ML systems, checked against real numbers.</h1>
+    <p>Arshit Dogra — B.Tech CSE (2026). I write Python and REST-based systems, add validation and error handling, and measure the result before calling it done. Product experience from my current internship helps me build the right thing.</p>
+    <div class="btns"><a class="btn primary" href="#work">See my projects</a><a class="btn" href="#contact">Talk to me</a></div>
+    <div class="lanes" aria-label="Focus areas"><span class="t">Backend &amp; APIs</span><span class="d">Data &amp; ML</span><span class="p">Product sense</span></div>
   </div>
   <div class="snap" aria-label="Proof points">
     <div><b>0.92</b><small>F1-score on an NLP system over 12,000+ multilingual entries</small></div>
     <div><b>87%</b><small>accuracy on a CNN waste classifier</small></div>
-    <div><b>2</b><small>internships: product at NestorBird, web dev at Craftisque</small></div>
-    <div><b>4</b><small>products &amp; pipelines in the case studies below</small></div>
+    <div><b>2</b><small>internships: web dev at Craftisque, product at NestorBird</small></div>
+    <div><b>4</b><small>projects with problem, build and result below</small></div>
   </div>
 </div></section>
 
 <section class="scan" aria-label="30-second summary"><div class="wrap">
-  <div class="q"><div class="n">01 · WHAT I SOLVE</div><h3>Unclear requirements, unreliable data</h3><p>Turning business asks into scoped PRDs and user stories, and raw or multilingual data into analytics people can trust.</p><a href="#problems">See the problems →</a></div>
-  <div class="q"><div class="n">02 · WHAT I'VE BUILT</div><h3>Pipelines, models and a warehouse tool</h3><p>An LLM + REST analytics pipeline, an NLP classifier, a CNN, and a retail warehouse operations product.</p><a href="#work">See the case studies →</a></div>
-  <div class="q"><div class="n">03 · WHY SHORTLIST ME</div><h3>I speak product and engineering</h3><p>I've worked in Agile sprints on both sides of the table, and I validate before I ship.</p><a href="#why">See why →</a></div>
-</div></section>
-
-<section id="problems"><div class="wrap rv">
-  <div class="eyebrow">Problems I solve</div><h2>Three kinds of mess, three ways I clean them up</h2>
-  <div class="prob">
-    <div class="card"><span class="tag">PRODUCT</span><h3>"The business needs X" → a scope developers can build</h3>
-      <p>I translate ERPNext / Frappe business requirements into PRDs and user stories with testable acceptance criteria, then check them against standard workflows before development starts.</p>
-      <div class="proof">Proof: NestorBird, Agile sprints in JIRA</div></div>
-    <div class="card"><span class="tag">DATA</span><h3>Raw, inconsistent data → analytics you can trust</h3>
-      <p>I build pipelines with validation and anomaly checks that flag bad input before it reaches a report, and I evaluate output against expected results.</p>
-      <div class="proof">Proof: YTURL.ai, NLP system, F1 0.92</div></div>
-    <div class="card"><span class="tag">TECHNOLOGY</span><h3>Systems that talk to each other without breaking</h3>
-      <p>I connect front-ends, REST APIs and LLM outputs, and add input validation and error handling so failures are caught, not shipped.</p>
-      <div class="proof">Proof: Craftisque web development, YTURL.ai</div></div>
-  </div>
+  <div class="q"><div class="n">01 · WHAT I BUILD</div><h3>Pipelines, models and APIs</h3><p>An LLM + REST analytics pipeline, an NLP classifier, a CNN image model, and a retail warehouse operations product.</p><a href="#work">See the projects →</a></div>
+  <div class="q"><div class="n">02 · HOW I ENGINEER</div><h3>Validation and error handling first</h3><p>Input checks, anomaly detection and measured results (F1 0.92, 87% accuracy) on every system, with Git-based team workflows.</p><a href="#problems">See my focus →</a></div>
+  <div class="q"><div class="n">03 · WHY SHORTLIST ME</div><h3>Solid fundamentals, real team experience</h3><p>DSA, OOP, DBMS and OS, two internships, and product experience that helps me build the right thing.</p><a href="#why">See why →</a></div>
 </div></section>
 
 <section id="work"><div class="wrap rv">
-  <div class="eyebrow">Case studies</div><h2>What I built, and what it did</h2>
+  <div class="eyebrow">Projects</div><h2>What I built, and what it did</h2>
   <div class="work">
     <a class="proj case" href="work/yturl.html"><div class="shot">screenshot</div><div class="body">
       <div class="meta"><b>01</b> · Data + Tech</div><h3>YTURL.ai</h3>
@@ -238,38 +236,53 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></section>
 
 <section id="how"><div class="wrap rv">
-  <div class="eyebrow">How I work</div><h2>Product × Data × Technology</h2>
+  <div class="eyebrow">Skills</div><h2>Engineering first, with product sense</h2>
   <div class="three">
-    <div class="card"><h3>Product</h3><div class="sub">Decide what is worth building</div><div class="tags"><span>PRDs</span><span>User stories</span><span>Acceptance criteria</span><span>Backlog prioritisation</span><span>User interviews</span><span>JIRA</span><span>Agile / Scrum</span><span>ERPNext / Frappe</span></div></div>
-    <div class="card"><h3>Data</h3><div class="sub">Prove it works</div><div class="tags"><span>Python</span><span>Pandas</span><span>SQL</span><span>MySQL</span><span>Data pipelines</span><span>F1 / accuracy</span><span>Validation checks</span></div></div>
-    <div class="card"><h3>Technology</h3><div class="sub">Ship it reliably</div><div class="tags"><span>REST APIs</span><span>LLM integration</span><span>Prompt engineering</span><span>NLP</span><span>CNN</span><span>Git / GitHub</span><span>DSA · OOP · DBMS · OS</span><span>Claude Code</span></div></div>
+    <div class="card"><h3>Engineering</h3><div class="sub">Build it and ship it reliably</div><div class="tags"><span>Python</span><span>REST APIs</span><span>Front-end integration</span><span>LLM integration</span><span>Prompt engineering</span><span>Git / GitHub</span><span>DSA</span><span>OOP</span><span>DBMS</span><span>OS</span></div></div>
+    <div class="card"><h3>Data &amp; ML</h3><div class="sub">Prove it works</div><div class="tags"><span>Pandas</span><span>SQL</span><span>MySQL</span><span>Data pipelines</span><span>NLP</span><span>CNN</span><span>F1 / accuracy evaluation</span><span>Validation checks</span></div></div>
+    <div class="card"><h3>Product &amp; process</h3><div class="sub">Build the right thing</div><div class="tags"><span>PRDs</span><span>User stories</span><span>Acceptance criteria</span><span>JIRA</span><span>Agile / Scrum</span><span>ERPNext / Frappe</span></div></div>
+  </div>
+</div></section>
+
+<section id="problems"><div class="wrap rv">
+  <div class="eyebrow">Focus</div><h2>How I approach engineering problems</h2>
+  <div class="prob">
+    <div class="card"><span class="tag">BACKEND &amp; INTEGRATION</span><h3>Systems that talk to each other without breaking</h3>
+      <p>I connect front-ends, REST APIs and LLM outputs, and add input validation and error handling so failures are caught, not shipped.</p>
+      <div class="proof">Proof: Craftisque web development, YTURL.ai</div></div>
+    <div class="card"><span class="tag">DATA &amp; ML</span><h3>Raw, inconsistent data → output you can trust</h3>
+      <p>I build pipelines with validation and anomaly checks that flag bad input before it reaches a report, and I evaluate output against expected results.</p>
+      <div class="proof">Proof: YTURL.ai, NLP system F1 0.92, CNN 87%</div></div>
+    <div class="card"><span class="tag">PRODUCT SENSE</span><h3>Clear requirements before code</h3>
+      <p>In my current product internship I turn ERPNext / Frappe business requirements into PRDs and user stories with testable acceptance criteria, which helps me build the right thing from the start.</p>
+      <div class="proof">Proof: NestorBird, Agile sprints in JIRA</div></div>
   </div>
 </div></section>
 
 <section id="experience"><div class="wrap rv">
   <div class="eyebrow">Delivered in teams</div><h2>Where I've done it</h2>
   <ul class="jobs">
-    <li><details open><summary><span class="role">Product Management Intern<small>NestorBird · Mohali (on-site)</small></span><span></span><span class="when">Jun 2026 — Present</span></summary>
-      <div class="detail"><ul>
-        <li>Worked daily with engineering and design in Agile sprints (JIRA), turning ERPNext / Frappe business requirements into PRDs and user stories with testable acceptance criteria.</li>
-        <li>Validated requirements in ERPNext / Frappe standard workflows before development, giving developers clear scope; analysed user-interview feedback to prioritise backlog fixes.</li>
-      </ul><div class="stack">ERPNext · Frappe · JIRA · Agile</div></div></details></li>
-    <li><details><summary><span class="role">Web Developer Intern<small>Craftisque</small></span><span></span><span class="when">Jun 2025 — Jul 2025</span></summary>
+    <li><details open><summary><span class="role">Web Developer Intern<small>Craftisque</small></span><span></span><span class="when">Jun 2025 — Jul 2025</span></summary>
       <div class="detail"><ul>
         <li>Integrated front-end components with backend REST APIs, enabling dynamic data display.</li>
         <li>Added input validation and error handling on API calls, reducing data-handling errors and improving stability.</li>
         <li>Collaborated with the team using Git-based workflows to build and debug features.</li>
       </ul><div class="stack">REST APIs · Git · Front-end</div></div></details></li>
+    <li><details open><summary><span class="role">Product Management Intern<small>NestorBird · Mohali (on-site)</small></span><span></span><span class="when">Jun 2026 — Present</span></summary>
+      <div class="detail"><ul>
+        <li>Worked daily with engineering and design in Agile sprints (JIRA), turning ERPNext / Frappe business requirements into PRDs and user stories with testable acceptance criteria.</li>
+        <li>Validated requirements in ERPNext / Frappe standard workflows before development, giving developers clear scope; analysed user-interview feedback to prioritise backlog fixes.</li>
+      </ul><div class="stack">ERPNext · Frappe · JIRA · Agile</div></div></details></li>
   </ul>
 </div></section>
 
 <section id="why"><div class="wrap rv">
   <div class="eyebrow">Why shortlist me</div><h2>What you get</h2>
   <div class="why">
-    <div><b>A bridge between product and code</b><p>I can write the PRD and read the API response, so less is lost between the two.</p></div>
+    <div><b>Strong fundamentals</b><p>B.Tech CSE (2026): DSA, OOP, DBMS, OS, plus three certifications.</p></div>
     <div><b>Validation-first habits</b><p>Every pipeline I've built checks its input and reports against expected results.</p></div>
     <div><b>Experience on real teams</b><p>Two internships working in Agile sprints with Git and JIRA.</p></div>
-    <div><b>Strong fundamentals</b><p>B.Tech CSE (2026): DSA, OOP, DBMS, OS, plus three certifications.</p></div>
+    <div><b>Product sense as a bonus</b><p>I can read a PRD and the API response, so less is lost between requirements and code.</p></div>
   </div>
   <div class="cols" style="margin-top:44px">
     <div><h3>Education</h3><ul><li>B.Tech, Computer Science &amp; Engineering<small>Jaypee University of Information Technology · 2022 – 2026</small></li></ul></div>
@@ -279,8 +292,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section id="contact" class="contact"><div class="wrap rv">
   <div class="cta-band">
-    <div><div class="eyebrow" style="color:var(--accent)">Contact</div><h2>Have a workflow that needs fixing?</h2><p style="opacity:.75;margin-top:8px">Hiring for product, full-stack or AI? Let's talk.</p></div>
-    <div class="btns"><a class="btn primary" href="mailto:arshitdogra5055@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/arshit">LinkedIn</a><a class="btn" href="https://github.com/Arshit05">GitHub</a><a class="btn" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé ↓</a></div>
+    <div><div class="eyebrow" style="color:var(--accent)">Contact</div><h2>Hiring for SDE, full-stack or AI/ML?</h2><p style="opacity:.75;margin-top:8px">I'm looking for software engineering internships. Let's talk.</p></div>
+    <div class="btns"><a class="btn primary" href="mailto:arshitdogra5055@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/arshit">LinkedIn</a><a class="btn" href="https://github.com/Arshit05">GitHub</a><a class="btn" href="Arshit_Dogra_SDE_Resume.pdf" download>Resume ↓</a></div>
   </div>
 </div></section>
 </main>
@@ -300,7 +313,7 @@ btn.onclick=()=>{
 const links=[...document.querySelectorAll('nav .links a[href^="#"]')];
 const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>{l.toggleAttribute('aria-current',false);if(l.hash==='#'+e.target.id)l.setAttribute('aria-current','true')})}),{rootMargin:'-40% 0px -55% 0px'});
 document.querySelectorAll('section[id]').forEach(s=>so.observe(s));
-/* résumé upload: stored in this browser (IndexedDB) */
+/* resume upload: stored in this browser (IndexedDB) */
 const toast=document.getElementById('toast');
 function say(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3200)}
 const db=()=>new Promise((res,rej)=>{const q=indexedDB.open('portfolio',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)});
@@ -312,7 +325,7 @@ load();
 document.getElementById('upload').onclick=()=>file.click();
 file.onchange=async()=>{const f=file.files[0];if(!f)return;
   if(f.size>10*1024*1024){say('File is over 10 MB — pick a smaller one.');return}
-  try{await kv('readwrite',s=>s.put(f,'resume'));await load();say('Saved "'+f.name+'" in this browser. Résumé buttons now use it.')}
+  try{await kv('readwrite',s=>s.put(f,'resume'));await load();say('Saved "'+f.name+'" in this browser. Resume buttons now use it.')}
   catch(e){say('Could not save the file in this browser.')}
   file.value=''};
 </script>
