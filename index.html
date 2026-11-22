@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arshit Dogra — Portfolio</title>
-<meta name="description" content="Portfolio of Arshit Dogra — Full Stack and AI engineer: REST APIs, LLM pipelines and NLP.">
+<meta name="description" content="Portfolio of Arshit Dogra — Product + Data + Technology: workflows turned into shipped, measurable software.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -120,13 +120,54 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   details summary{grid-template-columns:36px 1fr}summary .when{grid-column:2}
   .detail{padding-left:48px}
 }
+
+/* product-style additions */
+.kicker{display:inline-flex;gap:8px;align-items:center;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:6px 14px;margin-bottom:20px}
+.kicker i{width:8px;height:8px;border-radius:50%;background:#16a34a;display:inline-block}
+.hero h1{font-size:clamp(34px,5.4vw,64px);line-height:1.05;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lanes{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.lanes span{font:500 13px var(--mono);padding:4px 12px;border-radius:6px;border:1px solid var(--line)}
+.lanes .p{background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.lanes .d{background:color-mix(in srgb,#2563eb 14%,transparent)}
+.lanes .t{background:color-mix(in srgb,#16a34a 14%,transparent)}
+.scan{padding:0;border-top:1px solid var(--line);background:var(--surface)}
+.scan .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.scan .q{padding:28px 28px 28px 0}
+.scan .q+.q{padding-left:28px;border-left:1px solid var(--line)}
+.scan .n{font:500 12px var(--mono);color:var(--accent)}
+.scan h3{font:600 20px var(--serif);margin:6px 0 8px}
+.scan p{font-size:15px;color:var(--muted)}
+.scan a{font-size:14px;font-weight:500;display:inline-block;margin-top:10px}
+.prob{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.prob .card .tag{font:500 12px var(--mono);color:var(--accent);margin-bottom:10px;display:block}
+.prob .card h3{font:600 20px/1.25 var(--serif);text-transform:none;letter-spacing:0;color:var(--ink);margin-bottom:10px}
+.prob .card p{font-size:15px;color:var(--muted)}
+.prob .card .proof{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font:400 12px var(--mono);color:var(--ink)}
+.case .meta b{color:var(--ink)}
+.flow{display:grid;gap:6px;margin:12px 0 4px;font-size:14px;color:var(--muted)}
+.flow div{display:grid;grid-template-columns:78px 1fr;gap:8px}
+.flow strong{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-top:2px}
+.badge{display:inline-block;font:500 11px var(--mono);padding:2px 8px;border-radius:99px;border:1px solid var(--accent);color:var(--accent);margin-left:6px;vertical-align:middle}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.three .card h3{font:600 22px var(--serif);text-transform:none;letter-spacing:0;color:var(--ink);margin-bottom:4px}
+.three .card .sub{font-size:14px;color:var(--muted);margin-bottom:14px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.why div{border-left:3px solid var(--accent);padding:2px 0 2px 16px}
+.why b{display:block;font:600 18px var(--serif);margin-bottom:4px}
+.why p{font-size:15px;color:var(--muted)}
+.cta-band{background:var(--ink);color:var(--bg);border-radius:18px;padding:40px;display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap}
+.cta-band h2{margin:0;font-size:clamp(26px,4vw,38px)}
+.cta-band .btn{border-color:var(--bg);color:var(--bg)}
+.cta-band .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+@media (max-width:900px){.scan .wrap{grid-template-columns:1fr}.scan .q,.scan .q+.q{padding:20px 0;border-left:0;border-top:1px solid var(--line)}.three{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav aria-label="Primary">
   <a class="mono" href="#top" aria-label="Back to top">[AD]</a>
   <div class="links">
-    <a class="nbtn" href="#about">About</a><a class="nbtn" href="#skills">Skills</a><a class="nbtn" href="#experience">Experience</a><a class="nbtn" href="#work">Work</a><a class="nbtn" href="#contact">Contact</a>
+    <a class="nbtn" href="#problems">Problems</a><a class="nbtn" href="#work">Case studies</a><a class="nbtn" href="#how">How I work</a><a class="nbtn" href="#experience">Experience</a><a class="nbtn" href="#contact">Contact</a>
     <span class="sep" aria-hidden="true"></span>
     <a class="nbtn cta" id="resume" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé ↓</a>
     <button class="nbtn" id="upload" type="button">⬆ Upload résumé</button>
@@ -139,93 +180,108 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <main id="top">
 <section class="hero"><div class="wrap">
   <div>
-  <div class="loc">Bengaluru, Karnataka · open to internships</div>
-  <h1>Arshit<br><span>Dogra</span></h1>
-  <p>Full Stack &amp; <b>AI engineer</b> building reliable, API-driven applications — LLM pipelines, NLP systems and the validation that keeps them trustworthy.</p>
-  <div class="btns"><a class="btn primary" href="#work">See the work</a><a class="btn" href="#contact">Get in touch</a></div>
+    <div class="kicker"><i></i> Open to PM · Full Stack · AI internships</div>
+    <h1>I turn messy business workflows into <em>shipped software</em> and decisions you can measure.</h1>
+    <p>Arshit Dogra — Product, Data and Technology in one profile. I write the requirements, build the pipeline, and check the numbers before anyone ships.</p>
+    <div class="btns"><a class="btn primary" href="#work">See what I built</a><a class="btn" href="#contact">Talk to me</a></div>
+    <div class="lanes" aria-label="Three lanes"><span class="p">Product</span><span class="d">Data</span><span class="t">Technology</span></div>
   </div>
-  <div class="snap" aria-label="Highlights">
-    <div><b>0.92</b><small>F1-score, NLP over 12,000+ multilingual entries</small></div>
-    <div><b>87%</b><small>CNN waste-classifier accuracy</small></div>
-    <div><b>2</b><small>Internships: NestorBird &amp; Craftisque</small></div>
-    <div><b>B.Tech</b><small>CSE, JUIT · 2026</small></div>
-  </div>
-</div></section>
-
-<section id="about"><div class="wrap rv">
-  <div class="eyebrow">About</div><h2>Hi there!</h2>
-  <div class="about">
-    <div class="photo" aria-label="Profile photo placeholder">AD</div>
-    <div>
-      <p>I'm a Computer Science graduate (B.Tech, 2026) from Jaypee University of Information Technology. I like building end-to-end systems where REST APIs, LLM outputs and data pipelines come together with solid validation and error handling.</p>
-      <p>I built YTURL.ai, an LLM-powered YouTube analytics pipeline, and an NLP system that reached an F1-score of 0.92 over 12,000+ multilingual entries. I've worked in Agile sprints with engineering teams using Git and JIRA, and I'm strong in DSA, OOP and DBMS.</p>
-    </div>
+  <div class="snap" aria-label="Proof points">
+    <div><b>0.92</b><small>F1-score on an NLP system over 12,000+ multilingual entries</small></div>
+    <div><b>87%</b><small>accuracy on a CNN waste classifier</small></div>
+    <div><b>2</b><small>internships: product at NestorBird, web dev at Craftisque</small></div>
+    <div><b>4</b><small>products &amp; pipelines in the case studies below</small></div>
   </div>
 </div></section>
 
-<section id="skills"><div class="wrap rv">
-  <div class="eyebrow">Skills</div><h2>Toolbox</h2>
-  <div class="skills">
-    <div class="card"><h3>Languages</h3><div class="tags"><span>Python</span><span>SQL</span></div></div>
-    <div class="card"><h3>Backend &amp; APIs</h3><div class="tags"><span>REST APIs</span><span>API integration</span><span>Request/response validation</span><span>Error handling</span><span>Client-server architecture</span></div></div>
-    <div class="card"><h3>AI / ML</h3><div class="tags"><span>LLM integration</span><span>Prompt engineering</span><span>NLP</span><span>CNN</span><span>Machine learning</span><span>Pandas</span><span>Data pipelines</span><span>F1 / accuracy evaluation</span></div></div>
-    <div class="card"><h3>Databases</h3><div class="tags"><span>MySQL</span></div></div>
-    <div class="card"><h3>Tools &amp; Practices</h3><div class="tags"><span>Git</span><span>GitHub</span><span>JIRA</span><span>Agile / Scrum</span><span>Claude Code</span><span>ChatGPT</span></div></div>
-    <div class="card"><h3>CS Fundamentals</h3><div class="tags"><span>DSA</span><span>OOP</span><span>DBMS</span><span>Operating Systems</span></div></div>
+<section class="scan" aria-label="30-second summary"><div class="wrap">
+  <div class="q"><div class="n">01 · WHAT I SOLVE</div><h3>Unclear requirements, unreliable data</h3><p>Turning business asks into scoped PRDs and user stories, and raw or multilingual data into analytics people can trust.</p><a href="#problems">See the problems →</a></div>
+  <div class="q"><div class="n">02 · WHAT I'VE BUILT</div><h3>Pipelines, models and a warehouse tool</h3><p>An LLM + REST analytics pipeline, an NLP classifier, a CNN, and a retail warehouse operations product.</p><a href="#work">See the case studies →</a></div>
+  <div class="q"><div class="n">03 · WHY SHORTLIST ME</div><h3>I speak product and engineering</h3><p>I've worked in Agile sprints on both sides of the table, and I validate before I ship.</p><a href="#why">See why →</a></div>
+</div></section>
+
+<section id="problems"><div class="wrap rv">
+  <div class="eyebrow">Problems I solve</div><h2>Three kinds of mess, three ways I clean them up</h2>
+  <div class="prob">
+    <div class="card"><span class="tag">PRODUCT</span><h3>"The business needs X" → a scope developers can build</h3>
+      <p>I translate ERPNext / Frappe business requirements into PRDs and user stories with testable acceptance criteria, then check them against standard workflows before development starts.</p>
+      <div class="proof">Proof: NestorBird, Agile sprints in JIRA</div></div>
+    <div class="card"><span class="tag">DATA</span><h3>Raw, inconsistent data → analytics you can trust</h3>
+      <p>I build pipelines with validation and anomaly checks that flag bad input before it reaches a report, and I evaluate output against expected results.</p>
+      <div class="proof">Proof: YTURL.ai, NLP system, F1 0.92</div></div>
+    <div class="card"><span class="tag">TECHNOLOGY</span><h3>Systems that talk to each other without breaking</h3>
+      <p>I connect front-ends, REST APIs and LLM outputs, and add input validation and error handling so failures are caught, not shipped.</p>
+      <div class="proof">Proof: Craftisque web development, YTURL.ai</div></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap rv">
+  <div class="eyebrow">Case studies</div><h2>What I built, and what it did</h2>
+  <div class="work">
+    <a class="proj case" href="work/yturl.html"><div class="shot">screenshot</div><div class="body">
+      <div class="meta"><b>01</b> · Data + Tech</div><h3>YTURL.ai</h3>
+      <div class="flow"><div><strong>Problem</strong><span>Raw YouTube data is unstructured and hard to trust.</span></div><div><strong>Built</strong><span>Python pipeline joining REST APIs and LLM output.</span></div><div><strong>Result</strong><span>Structured analytics with validation that flags bad data before reporting.</span></div></div>
+      <div class="stack">Python · REST APIs · LLMs · Pandas · Git</div><div class="more">Read the case study →</div></div></a>
+    <a class="proj case" href="work/nlp-human-rights.html"><div class="shot">screenshot</div><div class="body">
+      <div class="meta"><b>02</b> · Data + NLP</div><h3>Human-rights violations in social media</h3>
+      <div class="flow"><div><strong>Problem</strong><span>Finding violations across thousands of multilingual posts.</span></div><div><strong>Built</strong><span>NLP pipeline with anomaly detection and input validation.</span></div><div><strong>Result</strong><span>F1-score 0.92 on 12,000+ entries.</span></div></div>
+      <div class="stack">Python · NLP · Pandas</div><div class="more">Read the case study →</div></div></a>
+    <a class="proj case" href="work/waste-detection.html"><div class="shot">screenshot</div><div class="body">
+      <div class="meta"><b>03</b> · ML</div><h3>Waste Detection for Recycling</h3>
+      <div class="flow"><div><strong>Problem</strong><span>Sorting waste for recycling is manual.</span></div><div><strong>Built</strong><span>CNN image classifier, tracked across model iterations.</span></div><div><strong>Result</strong><span>87% accuracy.</span></div></div>
+      <div class="stack">Python · CNN · Machine Learning</div><div class="more">Read the case study →</div></div></a>
+    <a class="proj case" href="https://preview-dff6b49de8aa4afcb24428d2e8b3e20a.preview.neander.ai/" target="_blank" rel="noopener"><div class="shot">live preview</div><div class="body">
+      <div class="meta"><b>04</b> · Product <span class="badge">NEW</span></div><h3>Retail Warehouse Operations</h3>
+      <div class="flow"><div><strong>Problem</strong><span>Managing retail warehouse operations in one system.</span></div><div><strong>Built</strong><span>A warehouse management product concept, live as a preview.</span></div><div><strong>Result</strong><span>Open the live preview to try it.</span></div></div>
+      <div class="stack">Product design · ERP-style workflows</div><div class="more">Open live preview ↗</div></div></a>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap rv">
+  <div class="eyebrow">How I work</div><h2>Product × Data × Technology</h2>
+  <div class="three">
+    <div class="card"><h3>Product</h3><div class="sub">Decide what is worth building</div><div class="tags"><span>PRDs</span><span>User stories</span><span>Acceptance criteria</span><span>Backlog prioritisation</span><span>User interviews</span><span>JIRA</span><span>Agile / Scrum</span><span>ERPNext / Frappe</span></div></div>
+    <div class="card"><h3>Data</h3><div class="sub">Prove it works</div><div class="tags"><span>Python</span><span>Pandas</span><span>SQL</span><span>MySQL</span><span>Data pipelines</span><span>F1 / accuracy</span><span>Validation checks</span></div></div>
+    <div class="card"><h3>Technology</h3><div class="sub">Ship it reliably</div><div class="tags"><span>REST APIs</span><span>LLM integration</span><span>Prompt engineering</span><span>NLP</span><span>CNN</span><span>Git / GitHub</span><span>DSA · OOP · DBMS · OS</span><span>Claude Code</span></div></div>
   </div>
 </div></section>
 
 <section id="experience"><div class="wrap rv">
-  <div class="eyebrow">Experience</div><h2>Where I've been</h2>
+  <div class="eyebrow">Delivered in teams</div><h2>Where I've done it</h2>
   <ul class="jobs">
-    <li><details open><summary><span class="role">Product Management Intern<small>NestorBird · Mohali, India (on-site)</small></span><span></span><span class="when">Jun 2026 — Present</span></summary>
+    <li><details open><summary><span class="role">Product Management Intern<small>NestorBird · Mohali (on-site)</small></span><span></span><span class="when">Jun 2026 — Present</span></summary>
       <div class="detail"><ul>
         <li>Worked daily with engineering and design in Agile sprints (JIRA), turning ERPNext / Frappe business requirements into PRDs and user stories with testable acceptance criteria.</li>
         <li>Validated requirements in ERPNext / Frappe standard workflows before development, giving developers clear scope; analysed user-interview feedback to prioritise backlog fixes.</li>
       </ul><div class="stack">ERPNext · Frappe · JIRA · Agile</div></div></details></li>
     <li><details><summary><span class="role">Web Developer Intern<small>Craftisque</small></span><span></span><span class="when">Jun 2025 — Jul 2025</span></summary>
       <div class="detail"><ul>
-        <li>Integrated front-end components with backend REST APIs, enabling dynamic data display in the web application.</li>
+        <li>Integrated front-end components with backend REST APIs, enabling dynamic data display.</li>
         <li>Added input validation and error handling on API calls, reducing data-handling errors and improving stability.</li>
         <li>Collaborated with the team using Git-based workflows to build and debug features.</li>
       </ul><div class="stack">REST APIs · Git · Front-end</div></div></details></li>
   </ul>
 </div></section>
 
-<section id="work"><div class="wrap rv">
-  <div class="eyebrow">Work</div><h2>Selected work</h2>
-  <div class="work">
-    <a class="proj" href="work/yturl.html"><div class="shot">screenshot</div><div class="body">
-      <div class="meta">01 · AI / Backend</div><h3>YTURL.ai</h3>
-      <p>End-to-end Python pipeline that combines REST APIs and LLM outputs to turn raw YouTube data into structured, reliable analytics, with automated validation that flags inconsistent data before reporting.</p>
-      <div class="stack">Python · REST APIs · LLMs · Pandas · Git</div><div class="more">Read the write-up →</div></div></a>
-    <a class="proj" href="work/nlp-human-rights.html"><div class="shot">screenshot</div><div class="body">
-      <div class="meta">02 · NLP / Research</div><h3>Ethical Analysis of Social Media for Human Rights Violations</h3>
-      <p>NLP pipeline over 12,000+ multilingual entries with anomaly-detection and validation checks to catch bad input early.</p>
-      <div class="award">F1-score 0.92</div>
-      <div class="stack">Python · NLP · Pandas</div><div class="more">Read the write-up →</div></div></a>
-    <a class="proj" href="work/waste-detection.html"><div class="shot">screenshot</div><div class="body">
-      <div class="meta">03 · Computer Vision</div><h3>Waste Detection System for Recycling</h3>
-      <p>CNN-based waste image classifier, with performance tracked across model iterations to prioritise improvements.</p>
-      <div class="award">87% accuracy</div>
-      <div class="stack">Python · CNN · Machine Learning</div><div class="more">Read the write-up →</div></div></a>
+<section id="why"><div class="wrap rv">
+  <div class="eyebrow">Why shortlist me</div><h2>What you get</h2>
+  <div class="why">
+    <div><b>A bridge between product and code</b><p>I can write the PRD and read the API response, so less is lost between the two.</p></div>
+    <div><b>Validation-first habits</b><p>Every pipeline I've built checks its input and reports against expected results.</p></div>
+    <div><b>Experience on real teams</b><p>Two internships working in Agile sprints with Git and JIRA.</p></div>
+    <div><b>Strong fundamentals</b><p>B.Tech CSE (2026): DSA, OOP, DBMS, OS, plus three certifications.</p></div>
   </div>
-</div></section>
-
-<section id="more"><div class="wrap rv">
-  <div class="cols">
-    <div><h3>Education</h3><ul><li>B.Tech, Computer Science &amp; Engineering<small>Jaypee University of Information Technology, Waknaghat · 2022 – 2026</small></li><li>Coursework<small>DSA, OOP, DBMS, Operating Systems, AI/ML</small></li></ul></div>
-    <div><h3>Certifications</h3><ul>
-      <li>Explore Machine Learning using Python<small>Infosys Springboard · May 2025</small></li>
-      <li>Python Certification<small>Infosys Springboard · Nov 2023</small></li>
-      <li>Data Analytics Job Simulation<small>Deloitte Australia (Forage) · Feb 2026</small></li></ul></div>
+  <div class="cols" style="margin-top:44px">
+    <div><h3>Education</h3><ul><li>B.Tech, Computer Science &amp; Engineering<small>Jaypee University of Information Technology · 2022 – 2026</small></li></ul></div>
+    <div><h3>Certifications</h3><ul><li>Explore Machine Learning using Python<small>Infosys Springboard · May 2025</small></li><li>Python Certification<small>Infosys Springboard · Nov 2023</small></li><li>Data Analytics Job Simulation<small>Deloitte Australia (Forage) · Feb 2026</small></li></ul></div>
   </div>
 </div></section>
 
 <section id="contact" class="contact"><div class="wrap rv">
-  <div class="eyebrow">Contact</div><h2>Let's build<br>something.</h2>
-  <a class="mail" href="mailto:arshitdogra5055@gmail.com">arshitdogra5055@gmail.com</a>
-  <div class="social"><a class="pill" href="https://github.com/Arshit05">GitHub</a><a class="pill" href="https://linkedin.com/in/arshit">LinkedIn</a><a class="pill" href="tel:+918264678100">+91-8264678100</a><a class="pill" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé</a></div>
+  <div class="cta-band">
+    <div><div class="eyebrow" style="color:var(--accent)">Contact</div><h2>Have a workflow that needs fixing?</h2><p style="opacity:.75;margin-top:8px">Hiring for product, full-stack or AI? Let's talk.</p></div>
+    <div class="btns"><a class="btn primary" href="mailto:arshitdogra5055@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/arshit">LinkedIn</a><a class="btn" href="https://github.com/Arshit05">GitHub</a><a class="btn" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé ↓</a></div>
+  </div>
 </div></section>
 </main>
 
