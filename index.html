@@ -22,33 +22,43 @@
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.wrap{max-width:960px;margin:0 auto;padding:0 24px}
-section{padding:96px 0;border-top:1px solid var(--line)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:64px 0;border-top:1px solid var(--line)}
 .eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-h2{font:600 clamp(28px,4vw,40px)/1.15 var(--serif);margin-bottom:36px}
+h2{font:600 clamp(28px,4vw,40px)/1.15 var(--serif);margin-bottom:28px}
 /* nav */
 header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;gap:28px;height:60px}
 .mono{font:500 14px var(--mono);text-decoration:none}
-nav .links{display:flex;gap:22px;margin-left:auto;font-size:14px}
-nav .links a{text-decoration:none;color:var(--muted)}
-nav .links a:hover,nav .links a.on{color:var(--ink)}
-.pill{border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;text-decoration:none;background:var(--surface)}
-.pill:hover{border-color:var(--accent)}
-#theme{cursor:pointer;font:inherit;color:inherit}
+nav{height:auto;min-height:60px;padding:8px 0;flex-wrap:wrap;gap:10px 20px}
+nav .links{display:flex;gap:8px;margin-left:auto;align-items:center;flex-wrap:wrap}
+.nbtn,.pill{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:500 14px var(--sans);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
+.nbtn:hover,.pill:hover{border-color:var(--accent);transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--accent)}
+.nbtn[aria-current="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.nbtn.cta{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+:where(a,button,summary,input):focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.sep{width:1px;height:24px;background:var(--line);margin:0 4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
+.toast.show{opacity:1;transform:translateX(-50%)}
 /* hero */
-.hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;border-top:0;padding:72px 0}
+.hero{border-top:0;padding:56px 0 48px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.snap{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.snap div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:4px 4px 0 var(--line)}
+.snap b{display:block;font:600 38px/1.1 var(--serif);color:var(--accent)}
+.snap small{font-size:13px;color:var(--muted)}
 .hero .loc{font:400 13px var(--mono);color:var(--muted);margin-bottom:20px}
-.hero h1{font:600 clamp(52px,11vw,120px)/.95 var(--serif);letter-spacing:-.03em}
+.hero h1{font:600 clamp(48px,8vw,96px)/.95 var(--serif);letter-spacing:-.03em}
 .hero h1 span{color:var(--accent)}
-.hero p{max-width:560px;font-size:19px;color:var(--muted);margin:28px 0 36px}
+.hero p{max-width:560px;font-size:19px;color:var(--muted);margin:22px 0 28px}
 .hero p b{color:var(--ink);font-weight:600}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:500;border:1px solid var(--ink);transition:transform .15s,box-shadow .15s}
 .btn.primary{background:var(--ink);color:var(--bg)}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--accent)}
 /* about */
-.about{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
+.about{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start}
 .photo{aspect-ratio:1;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font:600 64px var(--serif);color:var(--accent);box-shadow:6px 6px 0 var(--line)}
 .about p+p{margin-top:14px}
 .about p{color:var(--muted)}
@@ -73,7 +83,7 @@ summary .when{font:400 13px var(--mono);color:var(--muted)}
 .detail .stack{font:400 13px var(--mono);color:var(--accent)}
 details[open] .role{color:var(--accent)}
 /* work */
-.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px}
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
 .proj{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .proj:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--accent)}
 .shot{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,var(--bg),var(--bg) 10px,var(--surface) 10px,var(--surface) 20px);border-bottom:1px solid var(--line);display:grid;place-items:center;font:400 12px var(--mono);color:var(--muted)}
@@ -85,7 +95,7 @@ details[open] .role{color:var(--accent)}
 .proj .stack{margin-top:12px;font:400 12px var(--mono);color:var(--muted)}
 .proj .more{margin-top:14px;font-size:14px;font-weight:500}
 /* edu */
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
 .cols h3{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
 .cols li{list-style:none;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
 .cols li small{display:block;color:var(--muted)}
@@ -94,14 +104,17 @@ details[open] .role{color:var(--accent)}
 .contact h2{font-size:clamp(36px,7vw,72px)}
 .contact a.mail{font:600 clamp(20px,3vw,30px) var(--serif);color:var(--accent)}
 .social{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-footer{border-top:1px solid var(--line);padding:32px 0;font:400 13px var(--mono);color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:24px 0;font:400 13px var(--mono);color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* reveal */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 @media (max-width:720px){
-  nav .links a:not(.pill){display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  nav .links{margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
+  .nbtn,.pill{white-space:nowrap}
+  section{padding:48px 0}
   .about{grid-template-columns:1fr}.photo{max-width:160px}
   .work{grid-template-columns:1fr}
   details summary{grid-template-columns:36px 1fr}summary .when{grid-column:2}
@@ -110,21 +123,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav>
-  <a class="mono" href="#top">[AD]</a>
+<header><div class="wrap"><nav aria-label="Primary">
+  <a class="mono" href="#top" aria-label="Back to top">[AD]</a>
   <div class="links">
-    <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#contact">Contact</a>
-    <a class="pill" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé ↓</a>
-    <button class="pill" id="theme" aria-label="Toggle theme">◐</button>
+    <a class="nbtn" href="#about">About</a><a class="nbtn" href="#skills">Skills</a><a class="nbtn" href="#experience">Experience</a><a class="nbtn" href="#work">Work</a><a class="nbtn" href="#contact">Contact</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a class="nbtn cta" id="resume" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé ↓</a>
+    <button class="nbtn" id="upload" type="button">⬆ Upload résumé</button>
+    <input class="sr" id="file" type="file" accept="application/pdf,.pdf,.doc,.docx" tabindex="-1" aria-label="Choose résumé file">
+    <button class="nbtn" id="theme" type="button" aria-label="Toggle light or dark theme">◐</button>
   </div>
 </nav></div></header>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <main id="top">
 <section class="hero"><div class="wrap">
+  <div>
   <div class="loc">Bengaluru, Karnataka · open to internships</div>
   <h1>Arshit<br><span>Dogra</span></h1>
   <p>Full Stack &amp; <b>AI engineer</b> building reliable, API-driven applications — LLM pipelines, NLP systems and the validation that keeps them trustworthy.</p>
   <div class="btns"><a class="btn primary" href="#work">See the work</a><a class="btn" href="#contact">Get in touch</a></div>
+  </div>
+  <div class="snap" aria-label="Highlights">
+    <div><b>0.92</b><small>F1-score, NLP over 12,000+ multilingual entries</small></div>
+    <div><b>87%</b><small>CNN waste-classifier accuracy</small></div>
+    <div><b>2</b><small>Internships: NestorBird &amp; Craftisque</small></div>
+    <div><b>B.Tech</b><small>CSE, JUIT · 2026</small></div>
+  </div>
 </div></section>
 
 <section id="about"><div class="wrap rv">
@@ -217,8 +242,23 @@ btn.onclick=()=>{
   try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
 };
 const links=[...document.querySelectorAll('nav .links a[href^="#"]')];
-const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>{l.toggleAttribute('aria-current',false);if(l.hash==='#'+e.target.id)l.setAttribute('aria-current','true')})}),{rootMargin:'-40% 0px -55% 0px'});
 document.querySelectorAll('section[id]').forEach(s=>so.observe(s));
+/* résumé upload: stored in this browser (IndexedDB) */
+const toast=document.getElementById('toast');
+function say(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3200)}
+const db=()=>new Promise((res,rej)=>{const q=indexedDB.open('portfolio',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)});
+const kv=async(mode,fn)=>{const d=await db();return new Promise((res,rej)=>{const t=d.transaction('kv',mode),r=fn(t.objectStore('kv'));t.oncomplete=()=>res(r&&r.result);t.onerror=()=>rej(t.error)})};
+const resume=document.getElementById('resume'),file=document.getElementById('file');
+let url=null;
+async function load(){try{const f=await kv('readonly',s=>s.get('resume'));if(f){if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(f);document.querySelectorAll('a[download]').forEach(a=>{a.href=url;a.setAttribute('download',f.name)})}}catch(e){}}
+load();
+document.getElementById('upload').onclick=()=>file.click();
+file.onchange=async()=>{const f=file.files[0];if(!f)return;
+  if(f.size>10*1024*1024){say('File is over 10 MB — pick a smaller one.');return}
+  try{await kv('readwrite',s=>s.put(f,'resume'));await load();say('Saved "'+f.name+'" in this browser. Résumé buttons now use it.')}
+  catch(e){say('Could not save the file in this browser.')}
+  file.value=''};
 </script>
 </body>
 </html>
