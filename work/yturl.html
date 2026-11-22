@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YTURL.ai — Arshit Dogra</title><meta name="description" content="An end-to-end Python backend pipeline that integrates REST APIs and LLM outputs to convert raw YouTube data into structured, reliable analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f1e7; --surface:#fffaf0; --ink:#1d1b16; --muted:#6b655a; --line:#d9d1bf;
+  --accent:#c2410c; --accent-ink:#fff;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#14120e;--surface:#1c1a15;--ink:#f1ebdd;--muted:#a39b8a;--line:#332f26;--accent:#fb923c;--accent-ink:#14120e}
+}
+:root[data-theme="dark"]{--bg:#14120e;--surface:#1c1a15;--ink:#f1ebdd;--muted:#a39b8a;--line:#332f26;--accent:#fb923c;--accent-ink:#14120e}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h2{font:600 clamp(28px,4vw,40px)/1.15 var(--serif);margin-bottom:36px}
+/* nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:28px;height:60px}
+.mono{font:500 14px var(--mono);text-decoration:none}
+nav .links{display:flex;gap:22px;margin-left:auto;font-size:14px}
+nav .links a{text-decoration:none;color:var(--muted)}
+nav .links a:hover,nav .links a.on{color:var(--ink)}
+.pill{border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;text-decoration:none;background:var(--surface)}
+.pill:hover{border-color:var(--accent)}
+#theme{cursor:pointer;font:inherit;color:inherit}
+/* hero */
+.hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;border-top:0;padding:72px 0}
+.hero .loc{font:400 13px var(--mono);color:var(--muted);margin-bottom:20px}
+.hero h1{font:600 clamp(52px,11vw,120px)/.95 var(--serif);letter-spacing:-.03em}
+.hero h1 span{color:var(--accent)}
+.hero p{max-width:560px;font-size:19px;color:var(--muted);margin:28px 0 36px}
+.hero p b{color:var(--ink);font-weight:600}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:500;border:1px solid var(--ink);transition:transform .15s,box-shadow .15s}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--accent)}
+/* about */
+.about{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
+.photo{aspect-ratio:1;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font:600 64px var(--serif);color:var(--accent);box-shadow:6px 6px 0 var(--line)}
+.about p+p{margin-top:14px}
+.about p{color:var(--muted)}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:3px 10px;background:var(--bg)}
+/* experience */
+.jobs{list-style:none;padding:0;counter-reset:j}
+.jobs li{border-top:1px solid var(--line)}
+.jobs li:last-child{border-bottom:1px solid var(--line)}
+details summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:baseline;padding:20px 0}
+details summary::-webkit-details-marker{display:none}
+.jobs summary::before{counter-increment:j;content:"0" counter(j);font:400 13px var(--mono);color:var(--accent)}
+summary .role{font:600 20px var(--serif)}
+summary .role small{display:block;font:400 14px var(--sans);color:var(--muted)}
+summary .when{font:400 13px var(--mono);color:var(--muted)}
+.detail{padding:0 0 24px 60px;color:var(--muted)}
+.detail ul{padding-left:18px;margin-bottom:12px}
+.detail .stack{font:400 13px var(--mono);color:var(--accent)}
+details[open] .role{color:var(--accent)}
+/* work */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px}
+.proj{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.proj:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--accent)}
+.shot{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,var(--bg),var(--bg) 10px,var(--surface) 10px,var(--surface) 20px);border-bottom:1px solid var(--line);display:grid;place-items:center;font:400 12px var(--mono);color:var(--muted)}
+.proj .body{padding:22px}
+.proj .meta{font:400 12px var(--mono);color:var(--accent);margin-bottom:8px}
+.proj h3{font:600 24px var(--serif);margin-bottom:6px}
+.proj p{color:var(--muted);font-size:15px}
+.proj .award{margin-top:10px;font-size:13px;font-weight:500}
+.proj .stack{margin-top:12px;font:400 12px var(--mono);color:var(--muted)}
+.proj .more{margin-top:14px;font-size:14px;font-weight:500}
+/* edu */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.cols h3{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.cols li{list-style:none;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+.cols li small{display:block;color:var(--muted)}
+.cols ul{padding:0}
+/* contact */
+.contact h2{font-size:clamp(36px,7vw,72px)}
+.contact a.mail{font:600 clamp(20px,3vw,30px) var(--serif);color:var(--accent)}
+.social{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:32px 0;font:400 13px var(--mono);color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:720px){
+  nav .links a:not(.pill){display:none}
+  .about{grid-template-columns:1fr}.photo{max-width:160px}
+  .work{grid-template-columns:1fr}
+  details summary{grid-template-columns:36px 1fr}summary .when{grid-column:2}
+  .detail{padding-left:48px}
+}
+
+.back{display:inline-block;margin:36px 0 0;font:500 14px var(--mono);text-decoration:none;color:var(--muted)}
+.back:hover{color:var(--accent)}
+.page{padding:56px 0 96px}
+.page h1{font:600 clamp(34px,6vw,60px)/1.05 var(--serif);letter-spacing:-.02em;margin:8px 0 18px}
+.lede{font-size:19px;color:var(--muted);max-width:640px}
+.facts{display:flex;gap:32px;flex-wrap:wrap;margin:32px 0;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div small{display:block;font:400 12px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.facts div b{font:600 22px var(--serif)}
+.page h2{font-size:24px;margin:40px 0 14px}
+.page ul{padding-left:20px;color:var(--muted)}.page li{margin-bottom:10px}
+.nav2{display:flex;justify-content:space-between;margin-top:64px;padding-top:24px;border-top:1px solid var(--line);font-size:14px}
+.nav2 a{text-decoration:none}.nav2 a:hover{color:var(--accent)}
+</style></head>
+<body><header><div class="wrap"><nav><a class="mono" href="../index.html">[AD]</a>
+<div class="links"><a href="../index.html#work">← All work</a><a class="pill" href="../index.html#contact">Contact</a></div></nav></div></header>
+<main class="page"><div class="wrap">
+<div class="eyebrow">AI / Backend · Python</div><h1>AI-Powered YouTube Data Extraction & Analytics</h1><p class="lede">An end-to-end Python backend pipeline that integrates REST APIs and LLM outputs to convert raw YouTube data into structured, reliable analytics.</p>
+<div class="facts"><div><small>Stack</small><b>Python · REST APIs · LLMs · Pandas · Git</b></div><div><small>Type</small><b>Backend pipeline</b></div></div>
+<div class="shot" style="border:1px solid var(--line);border-radius:14px">screenshot</div>
+<h2>What I did</h2><ul><li>Built an end-to-end Python backend pipeline that integrates REST APIs and LLM outputs to convert raw YouTube data into structured, reliable analytics.</li><li>Implemented automated input validation and error-handling checks that flag inconsistent data before reporting, improving output reliability.</li><li>Automated recurring data-processing workflows with Pandas for consistent results across runs.</li><li>Maintained the code in a version-controlled GitHub repository.</li></ul>
+<p style="margin-top:28px"><a class="btn primary" href="https://github.com/Arshit05/YTURL.ai">View on GitHub →</a></p>
+<div class="nav2"><a href="waste-detection.html">← Waste Detection</a><a href="nlp-human-rights.html">Human Rights NLP →</a></div>
+</div></main></body></html>

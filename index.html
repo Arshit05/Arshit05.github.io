@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arshit Dogra — Portfolio</title>
+<meta name="description" content="Portfolio of Arshit Dogra — Full Stack and AI engineer: REST APIs, LLM pipelines and NLP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f1e7; --surface:#fffaf0; --ink:#1d1b16; --muted:#6b655a; --line:#d9d1bf;
+  --accent:#c2410c; --accent-ink:#fff;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#14120e;--surface:#1c1a15;--ink:#f1ebdd;--muted:#a39b8a;--line:#332f26;--accent:#fb923c;--accent-ink:#14120e}
+}
+:root[data-theme="dark"]{--bg:#14120e;--surface:#1c1a15;--ink:#f1ebdd;--muted:#a39b8a;--line:#332f26;--accent:#fb923c;--accent-ink:#14120e}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h2{font:600 clamp(28px,4vw,40px)/1.15 var(--serif);margin-bottom:36px}
+/* nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:28px;height:60px}
+.mono{font:500 14px var(--mono);text-decoration:none}
+nav .links{display:flex;gap:22px;margin-left:auto;font-size:14px}
+nav .links a{text-decoration:none;color:var(--muted)}
+nav .links a:hover,nav .links a.on{color:var(--ink)}
+.pill{border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;text-decoration:none;background:var(--surface)}
+.pill:hover{border-color:var(--accent)}
+#theme{cursor:pointer;font:inherit;color:inherit}
+/* hero */
+.hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;border-top:0;padding:72px 0}
+.hero .loc{font:400 13px var(--mono);color:var(--muted);margin-bottom:20px}
+.hero h1{font:600 clamp(52px,11vw,120px)/.95 var(--serif);letter-spacing:-.03em}
+.hero h1 span{color:var(--accent)}
+.hero p{max-width:560px;font-size:19px;color:var(--muted);margin:28px 0 36px}
+.hero p b{color:var(--ink);font-weight:600}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:500;border:1px solid var(--ink);transition:transform .15s,box-shadow .15s}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--accent)}
+/* about */
+.about{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
+.photo{aspect-ratio:1;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font:600 64px var(--serif);color:var(--accent);box-shadow:6px 6px 0 var(--line)}
+.about p+p{margin-top:14px}
+.about p{color:var(--muted)}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:3px 10px;background:var(--bg)}
+/* experience */
+.jobs{list-style:none;padding:0;counter-reset:j}
+.jobs li{border-top:1px solid var(--line)}
+.jobs li:last-child{border-bottom:1px solid var(--line)}
+details summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:baseline;padding:20px 0}
+details summary::-webkit-details-marker{display:none}
+.jobs summary::before{counter-increment:j;content:"0" counter(j);font:400 13px var(--mono);color:var(--accent)}
+summary .role{font:600 20px var(--serif)}
+summary .role small{display:block;font:400 14px var(--sans);color:var(--muted)}
+summary .when{font:400 13px var(--mono);color:var(--muted)}
+.detail{padding:0 0 24px 60px;color:var(--muted)}
+.detail ul{padding-left:18px;margin-bottom:12px}
+.detail .stack{font:400 13px var(--mono);color:var(--accent)}
+details[open] .role{color:var(--accent)}
+/* work */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px}
+.proj{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.proj:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--accent)}
+.shot{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,var(--bg),var(--bg) 10px,var(--surface) 10px,var(--surface) 20px);border-bottom:1px solid var(--line);display:grid;place-items:center;font:400 12px var(--mono);color:var(--muted)}
+.proj .body{padding:22px}
+.proj .meta{font:400 12px var(--mono);color:var(--accent);margin-bottom:8px}
+.proj h3{font:600 24px var(--serif);margin-bottom:6px}
+.proj p{color:var(--muted);font-size:15px}
+.proj .award{margin-top:10px;font-size:13px;font-weight:500}
+.proj .stack{margin-top:12px;font:400 12px var(--mono);color:var(--muted)}
+.proj .more{margin-top:14px;font-size:14px;font-weight:500}
+/* edu */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.cols h3{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.cols li{list-style:none;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+.cols li small{display:block;color:var(--muted)}
+.cols ul{padding:0}
+/* contact */
+.contact h2{font-size:clamp(36px,7vw,72px)}
+.contact a.mail{font:600 clamp(20px,3vw,30px) var(--serif);color:var(--accent)}
+.social{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:32px 0;font:400 13px var(--mono);color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:720px){
+  nav .links a:not(.pill){display:none}
+  .about{grid-template-columns:1fr}.photo{max-width:160px}
+  .work{grid-template-columns:1fr}
+  details summary{grid-template-columns:36px 1fr}summary .when{grid-column:2}
+  .detail{padding-left:48px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="mono" href="#top">[AD]</a>
+  <div class="links">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#contact">Contact</a>
+    <a class="pill" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé ↓</a>
+    <button class="pill" id="theme" aria-label="Toggle theme">◐</button>
+  </div>
+</nav></div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div class="loc">Bengaluru, Karnataka · open to internships</div>
+  <h1>Arshit<br><span>Dogra</span></h1>
+  <p>Full Stack &amp; <b>AI engineer</b> building reliable, API-driven applications — LLM pipelines, NLP systems and the validation that keeps them trustworthy.</p>
+  <div class="btns"><a class="btn primary" href="#work">See the work</a><a class="btn" href="#contact">Get in touch</a></div>
+</div></section>
+
+<section id="about"><div class="wrap rv">
+  <div class="eyebrow">About</div><h2>Hi there!</h2>
+  <div class="about">
+    <div class="photo" aria-label="Profile photo placeholder">AD</div>
+    <div>
+      <p>I'm a Computer Science graduate (B.Tech, 2026) from Jaypee University of Information Technology. I like building end-to-end systems where REST APIs, LLM outputs and data pipelines come together with solid validation and error handling.</p>
+      <p>I built YTURL.ai, an LLM-powered YouTube analytics pipeline, and an NLP system that reached an F1-score of 0.92 over 12,000+ multilingual entries. I've worked in Agile sprints with engineering teams using Git and JIRA, and I'm strong in DSA, OOP and DBMS.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap rv">
+  <div class="eyebrow">Skills</div><h2>Toolbox</h2>
+  <div class="skills">
+    <div class="card"><h3>Languages</h3><div class="tags"><span>Python</span><span>SQL</span></div></div>
+    <div class="card"><h3>Backend &amp; APIs</h3><div class="tags"><span>REST APIs</span><span>API integration</span><span>Request/response validation</span><span>Error handling</span><span>Client-server architecture</span></div></div>
+    <div class="card"><h3>AI / ML</h3><div class="tags"><span>LLM integration</span><span>Prompt engineering</span><span>NLP</span><span>CNN</span><span>Machine learning</span><span>Pandas</span><span>Data pipelines</span><span>F1 / accuracy evaluation</span></div></div>
+    <div class="card"><h3>Databases</h3><div class="tags"><span>MySQL</span></div></div>
+    <div class="card"><h3>Tools &amp; Practices</h3><div class="tags"><span>Git</span><span>GitHub</span><span>JIRA</span><span>Agile / Scrum</span><span>Claude Code</span><span>ChatGPT</span></div></div>
+    <div class="card"><h3>CS Fundamentals</h3><div class="tags"><span>DSA</span><span>OOP</span><span>DBMS</span><span>Operating Systems</span></div></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap rv">
+  <div class="eyebrow">Experience</div><h2>Where I've been</h2>
+  <ul class="jobs">
+    <li><details open><summary><span class="role">Product Management Intern<small>NestorBird · Mohali, India (on-site)</small></span><span></span><span class="when">Jun 2026 — Present</span></summary>
+      <div class="detail"><ul>
+        <li>Worked daily with engineering and design in Agile sprints (JIRA), turning ERPNext / Frappe business requirements into PRDs and user stories with testable acceptance criteria.</li>
+        <li>Validated requirements in ERPNext / Frappe standard workflows before development, giving developers clear scope; analysed user-interview feedback to prioritise backlog fixes.</li>
+      </ul><div class="stack">ERPNext · Frappe · JIRA · Agile</div></div></details></li>
+    <li><details><summary><span class="role">Web Developer Intern<small>Craftisque</small></span><span></span><span class="when">Jun 2025 — Jul 2025</span></summary>
+      <div class="detail"><ul>
+        <li>Integrated front-end components with backend REST APIs, enabling dynamic data display in the web application.</li>
+        <li>Added input validation and error handling on API calls, reducing data-handling errors and improving stability.</li>
+        <li>Collaborated with the team using Git-based workflows to build and debug features.</li>
+      </ul><div class="stack">REST APIs · Git · Front-end</div></div></details></li>
+  </ul>
+</div></section>
+
+<section id="work"><div class="wrap rv">
+  <div class="eyebrow">Work</div><h2>Selected work</h2>
+  <div class="work">
+    <a class="proj" href="work/yturl.html"><div class="shot">screenshot</div><div class="body">
+      <div class="meta">01 · AI / Backend</div><h3>YTURL.ai</h3>
+      <p>End-to-end Python pipeline that combines REST APIs and LLM outputs to turn raw YouTube data into structured, reliable analytics, with automated validation that flags inconsistent data before reporting.</p>
+      <div class="stack">Python · REST APIs · LLMs · Pandas · Git</div><div class="more">Read the write-up →</div></div></a>
+    <a class="proj" href="work/nlp-human-rights.html"><div class="shot">screenshot</div><div class="body">
+      <div class="meta">02 · NLP / Research</div><h3>Ethical Analysis of Social Media for Human Rights Violations</h3>
+      <p>NLP pipeline over 12,000+ multilingual entries with anomaly-detection and validation checks to catch bad input early.</p>
+      <div class="award">F1-score 0.92</div>
+      <div class="stack">Python · NLP · Pandas</div><div class="more">Read the write-up →</div></div></a>
+    <a class="proj" href="work/waste-detection.html"><div class="shot">screenshot</div><div class="body">
+      <div class="meta">03 · Computer Vision</div><h3>Waste Detection System for Recycling</h3>
+      <p>CNN-based waste image classifier, with performance tracked across model iterations to prioritise improvements.</p>
+      <div class="award">87% accuracy</div>
+      <div class="stack">Python · CNN · Machine Learning</div><div class="more">Read the write-up →</div></div></a>
+  </div>
+</div></section>
+
+<section id="more"><div class="wrap rv">
+  <div class="cols">
+    <div><h3>Education</h3><ul><li>B.Tech, Computer Science &amp; Engineering<small>Jaypee University of Information Technology, Waknaghat · 2022 – 2026</small></li><li>Coursework<small>DSA, OOP, DBMS, Operating Systems, AI/ML</small></li></ul></div>
+    <div><h3>Certifications</h3><ul>
+      <li>Explore Machine Learning using Python<small>Infosys Springboard · May 2025</small></li>
+      <li>Python Certification<small>Infosys Springboard · Nov 2023</small></li>
+      <li>Data Analytics Job Simulation<small>Deloitte Australia (Forage) · Feb 2026</small></li></ul></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap rv">
+  <div class="eyebrow">Contact</div><h2>Let's build<br>something.</h2>
+  <a class="mail" href="mailto:arshitdogra5055@gmail.com">arshitdogra5055@gmail.com</a>
+  <div class="social"><a class="pill" href="https://github.com/Arshit05">GitHub</a><a class="pill" href="https://linkedin.com/in/arshit">LinkedIn</a><a class="pill" href="tel:+918264678100">+91-8264678100</a><a class="pill" href="Arshit_Dogra_FullStack_AI_Intern_Resume.pdf" download>Résumé</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Arshit Dogra · Bengaluru, India</span><span>Thanks for scrolling all the way down :)</span><a href="#top">[↑]</a></div></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const root=document.documentElement,btn=document.getElementById('theme');
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+btn.onclick=()=>{
+  const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+  root.dataset.theme=dark?'light':'dark';
+  try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
+};
+const links=[...document.querySelectorAll('nav .links a[href^="#"]')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>so.observe(s));
+</script>
+</body>
+</html>
