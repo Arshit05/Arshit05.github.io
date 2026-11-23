@@ -47,8 +47,6 @@ nav .links{order:2}
 :where(a,button,summary,input):focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .sep{width:1px;height:24px;background:var(--line);margin:0 4px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
-.toast.show{opacity:1;transform:translateX(-50%)}
 /* hero */
 .hero{border-top:0;padding:56px 0 48px}
 .hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
@@ -178,17 +176,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </head>
 <body>
 <header><div class="wrap"><nav aria-label="Primary">
-  <a class="mono" href="#top" aria-label="Back to top">[AD]</a>
   <div class="links">
     <a class="nbtn" href="#work">Projects</a><a class="nbtn" href="#how">Skills</a><a class="nbtn" href="#problems">Focus</a><a class="nbtn" href="#experience">Experience</a><a class="nbtn" href="#contact">Contact</a>
     <span class="sep" aria-hidden="true"></span>
-    <a class="nbtn cta" id="resume" href="Arshit_Dogra_SDE_Resume.pdf" download>Resume ↓</a>
-    <button class="nbtn" id="upload" type="button">⬆ Upload resume</button>
-    <input class="sr" id="file" type="file" accept="application/pdf,.pdf,.doc,.docx" tabindex="-1" aria-label="Choose resume file">
+    <a class="nbtn cta" id="resume" data-resume href="Arshit_Dogra_SDE_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
   </div>
   <button class="nbtn" id="theme" type="button" aria-label="Toggle light or dark theme">◐</button>
 </nav></div></header>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <main id="top">
 <section class="hero"><div class="wrap">
@@ -228,10 +222,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="meta"><b>03</b> · ML</div><h3>Waste Detection for Recycling</h3>
       <div class="flow"><div><strong>Problem</strong><span>Sorting waste for recycling is manual.</span></div><div><strong>Built</strong><span>CNN image classifier, tracked across model iterations.</span></div><div><strong>Result</strong><span>87% accuracy.</span></div></div>
       <div class="stack">Python · CNN · Machine Learning</div><div class="more">Read the case study →</div></div></a>
-    <a class="proj case" href="https://preview-dff6b49de8aa4afcb24428d2e8b3e20a.preview.neander.ai/" target="_blank" rel="noopener"><div class="shot">live preview</div><div class="body">
+    <a class="proj case" href="https://warehouse-cku3.apps.neander.ai" target="_blank" rel="noopener"><div class="shot">live app</div><div class="body">
       <div class="meta"><b>04</b> · Product <span class="badge">NEW</span></div><h3>Retail Warehouse Operations</h3>
-      <div class="flow"><div><strong>Problem</strong><span>Managing retail warehouse operations in one system.</span></div><div><strong>Built</strong><span>A warehouse management product concept, live as a preview.</span></div><div><strong>Result</strong><span>Open the live preview to try it.</span></div></div>
-      <div class="stack">Product design · ERP-style workflows</div><div class="more">Open live preview ↗</div></div></a>
+      <div class="flow"><div><strong>Problem</strong><span>Managing retail warehouse operations in one system.</span></div><div><strong>Built</strong><span>A warehouse management product concept, live and deployed.</span></div><div><strong>Result</strong><span>Open the live app to try it.</span></div></div>
+      <div class="stack">Product design · ERP-style workflows</div><div class="more">Open live app ↗</div></div></a>
   </div>
 </div></section>
 
@@ -293,7 +287,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="contact" class="contact"><div class="wrap rv">
   <div class="cta-band">
     <div><div class="eyebrow" style="color:var(--accent)">Contact</div><h2>Hiring for SDE, full-stack or AI/ML?</h2><p style="opacity:.75;margin-top:8px">I'm looking for software engineering internships. Let's talk.</p></div>
-    <div class="btns"><a class="btn primary" href="mailto:arshitdogra5055@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/arshit">LinkedIn</a><a class="btn" href="https://github.com/Arshit05">GitHub</a><a class="btn" href="Arshit_Dogra_SDE_Resume.pdf" download>Resume ↓</a></div>
+    <div class="btns"><a class="btn primary" href="mailto:arshitdogra5055@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/arshit">LinkedIn</a><a class="btn" href="https://github.com/Arshit05">GitHub</a><a class="btn" data-resume href="Arshit_Dogra_SDE_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>
   </div>
 </div></section>
 </main>
@@ -313,21 +307,6 @@ btn.onclick=()=>{
 const links=[...document.querySelectorAll('nav .links a[href^="#"]')];
 const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>{l.toggleAttribute('aria-current',false);if(l.hash==='#'+e.target.id)l.setAttribute('aria-current','true')})}),{rootMargin:'-40% 0px -55% 0px'});
 document.querySelectorAll('section[id]').forEach(s=>so.observe(s));
-/* resume upload: stored in this browser (IndexedDB) */
-const toast=document.getElementById('toast');
-function say(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3200)}
-const db=()=>new Promise((res,rej)=>{const q=indexedDB.open('portfolio',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)});
-const kv=async(mode,fn)=>{const d=await db();return new Promise((res,rej)=>{const t=d.transaction('kv',mode),r=fn(t.objectStore('kv'));t.oncomplete=()=>res(r&&r.result);t.onerror=()=>rej(t.error)})};
-const resume=document.getElementById('resume'),file=document.getElementById('file');
-let url=null;
-async function load(){try{const f=await kv('readonly',s=>s.get('resume'));if(f){if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(f);document.querySelectorAll('a[download]').forEach(a=>{a.href=url;a.setAttribute('download',f.name)})}}catch(e){}}
-load();
-document.getElementById('upload').onclick=()=>file.click();
-file.onchange=async()=>{const f=file.files[0];if(!f)return;
-  if(f.size>10*1024*1024){say('File is over 10 MB — pick a smaller one.');return}
-  try{await kv('readwrite',s=>s.put(f,'resume'));await load();say('Saved "'+f.name+'" in this browser. Resume buttons now use it.')}
-  catch(e){say('Could not save the file in this browser.')}
-  file.value=''};
 </script>
 </body>
 </html>
