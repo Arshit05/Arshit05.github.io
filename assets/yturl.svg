@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="YTURL.ai pipeline: YouTube data through REST APIs and an LLM into validated analytics">
+<defs>
+<pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#2c2920" stroke-width="1"/></pattern>
+<radialGradient id="glow" cx="85%" cy="0%" r="70%"><stop offset="0" stop-color="#fb923c" stop-opacity=".35"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>
+<linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#c2410c"/></linearGradient>
+<marker id="a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#fb923c"/></marker>
+</defs>
+<rect width="640" height="360" fill="#1d1b16"/><rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#glow)"/>
+<g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#a39b8a" letter-spacing="1.4"><text x="50" y="44">DATA PIPELINE</text></g>
+<g font-family="Georgia,serif" font-weight="700" font-size="22" fill="#f1ebdd"><text x="50" y="72">YTURL<tspan fill="#fb923c">.ai</tspan></text></g>
+<g font-family="system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+<g><rect x="50" y="96" width="124" height="64" rx="12" fill="#26231c" stroke="#3a362b"/><path d="M96 112l16 9-16 9z" fill="#f87171"/><text x="112" y="150" fill="#f1ebdd" font-size="12">YouTube data</text></g>
+<g><rect x="186" y="96" width="124" height="64" rx="12" fill="#26231c" stroke="#3a362b"/><text x="248" y="124" fill="#60a5fa" font-family="ui-monospace,Menlo,monospace" font-size="15">{ REST }</text><text x="248" y="148" fill="#f1ebdd" font-size="12">APIs</text></g>
+<g><rect x="322" y="96" width="124" height="64" rx="12" fill="#26231c" stroke="#3a362b"/><circle cx="384" cy="120" r="9" fill="none" stroke="#a78bfa" stroke-width="2"/><circle cx="384" cy="120" r="3" fill="#a78bfa"/><text x="384" y="148" fill="#f1ebdd" font-size="12">LLM output</text></g>
+<g><rect x="458" y="96" width="132" height="64" rx="12" fill="#26231c" stroke="#fb923c"/><text x="524" y="124" fill="#4ade80" font-family="ui-monospace,Menlo,monospace" font-size="15">✓ checks</text><text x="524" y="148" fill="#f1ebdd" font-size="12">Pandas</text></g>
+</g>
+<g stroke="#fb923c" stroke-width="2" marker-end="url(#a)"><path d="M176 128h8"/><path d="M312 128h8"/><path d="M448 128h8"/></g>
+<rect x="50" y="184" width="540" height="130" rx="14" fill="#26231c" stroke="#3a362b"/>
+<g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#a39b8a" letter-spacing="1.2"><text x="70" y="210">STRUCTURED ANALYTICS</text></g>
+<g fill="url(#bar)"><rect x="72" y="262" width="26" height="36" rx="4"/><rect x="108" y="246" width="26" height="52" rx="4"/><rect x="144" y="256" width="26" height="42" rx="4"/><rect x="180" y="230" width="26" height="68" rx="4"/><rect x="216" y="240" width="26" height="58" rx="4"/><rect x="252" y="222" width="26" height="76" rx="4"/></g>
+<path d="M72 298H280" stroke="#3a362b"/>
+<g><rect x="330" y="214" width="240" height="38" rx="10" fill="#14120e" stroke="#3a362b"/><circle cx="350" cy="233" r="6" fill="#f87171"/><text x="366" y="238" font-family="system-ui,sans-serif" font-size="13" fill="#f1ebdd">Bad rows flagged first</text></g>
+<g><rect x="330" y="262" width="240" height="38" rx="10" fill="#14120e" stroke="#3a362b"/><circle cx="350" cy="281" r="6" fill="#4ade80"/><text x="366" y="286" font-family="system-ui,sans-serif" font-size="13" fill="#f1ebdd">Clean rows reach the report</text></g>
+</svg>

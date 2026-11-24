@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arshit Dogra — Software Engineer Portfolio</title>
 <meta name="description" content="Portfolio of Arshit Dogra — software engineer (B.Tech CSE 2026) building Python, REST API, data and ML systems that are validated against measurable results.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://arshit05.github.io/">
+<meta property="og:type" content="website"><meta property="og:title" content="Arshit Dogra — Software Engineer Portfolio"><meta property="og:description" content="Python, REST API, data and ML projects validated against measurable results. Open to SDE, full-stack and AI/ML internships."><meta property="og:url" content="https://arshit05.github.io/">
+<meta name="theme-color" content="#f6f1e7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -97,6 +101,7 @@ details[open] .role{color:var(--accent)}
 .proj{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .proj:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--accent)}
 .shot{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,var(--bg),var(--bg) 10px,var(--surface) 10px,var(--surface) 20px);border-bottom:1px solid var(--line);display:grid;place-items:center;font:400 12px var(--mono);color:var(--muted)}
+.shot{overflow:hidden}.shot img{width:100%;height:100%;object-fit:cover;display:block}.shot.contain img{object-fit:contain;background:#fff;padding:8px}.shot.top img{object-position:top}
 .proj .body{padding:28px;flex:1}
 .proj .more{margin-top:auto;padding-top:14px}
 .proj .meta{font:400 12px var(--mono);color:var(--accent);margin-bottom:8px}
@@ -210,19 +215,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="work"><div class="wrap rv">
   <div class="eyebrow">Projects</div><h2>What I built, and what it did</h2>
   <div class="work">
-    <a class="proj case" href="work/yturl.html"><div class="shot">screenshot</div><div class="body">
+    <a class="proj case" href="work/yturl.html"><div class="shot"><img src="assets/yturl.svg" alt="YTURL.ai pipeline: YouTube data through REST APIs and an LLM into validated analytics" loading="lazy"></div><div class="body">
       <div class="meta"><b>01</b> · Data + Tech</div><h3>YTURL.ai</h3>
       <div class="flow"><div><strong>Problem</strong><span>Raw YouTube data is unstructured and hard to trust.</span></div><div><strong>Built</strong><span>Python pipeline joining REST APIs and LLM output.</span></div><div><strong>Result</strong><span>Structured analytics with validation that flags bad data before reporting.</span></div></div>
       <div class="stack">Python · REST APIs · LLMs · Pandas · Git</div><div class="more">Read the case study →</div></div></a>
-    <a class="proj case" href="work/nlp-human-rights.html"><div class="shot">screenshot</div><div class="body">
+    <a class="proj case" href="work/nlp-human-rights.html"><div class="shot"><img src="assets/nlp.svg" alt="NLP pipeline classifying multilingual posts into three human-rights categories, F1 0.92" loading="lazy"></div><div class="body">
       <div class="meta"><b>02</b> · Data + NLP</div><h3>Human-rights violations in social media</h3>
       <div class="flow"><div><strong>Problem</strong><span>Finding violations across thousands of multilingual posts.</span></div><div><strong>Built</strong><span>NLP pipeline with anomaly detection and input validation.</span></div><div><strong>Result</strong><span>F1-score 0.92 on 12,000+ entries.</span></div></div>
       <div class="stack">Python · NLP · Pandas</div><div class="more">Read the case study →</div></div></a>
-    <a class="proj case" href="work/waste-detection.html"><div class="shot">screenshot</div><div class="body">
+    <a class="proj case" href="work/waste-detection.html"><div class="shot"><img src="assets/waste.svg" alt="CNN classifying waste images as organic or recyclable, 87% accuracy" loading="lazy"></div><div class="body">
       <div class="meta"><b>03</b> · ML</div><h3>Waste Detection for Recycling</h3>
       <div class="flow"><div><strong>Problem</strong><span>Sorting waste for recycling is manual.</span></div><div><strong>Built</strong><span>CNN image classifier, tracked across model iterations.</span></div><div><strong>Result</strong><span>87% accuracy.</span></div></div>
       <div class="stack">Python · CNN · Machine Learning</div><div class="more">Read the case study →</div></div></a>
-    <a class="proj case" href="https://warehouse-cku3.apps.neander.ai" target="_blank" rel="noopener"><div class="shot">live app</div><div class="body">
+    <a class="proj case" href="https://warehouse-cku3.apps.neander.ai" target="_blank" rel="noopener"><div class="shot"><img src="assets/warehouse.svg" alt="Warehouse operations dashboard with stock KPIs, expiring batches and a storage rack" loading="lazy"></div><div class="body">
       <div class="meta"><b>04</b> · Product <span class="badge">NEW</span></div><h3>Retail Warehouse Operations</h3>
       <div class="flow"><div><strong>Problem</strong><span>Managing retail warehouse operations in one system.</span></div><div><strong>Built</strong><span>A warehouse management product concept, live and deployed.</span></div><div><strong>Result</strong><span>Open the live app to try it.</span></div></div>
       <div class="stack">Product design · ERP-style workflows</div><div class="more">Open live app ↗</div></div></a>

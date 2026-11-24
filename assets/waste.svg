@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="CNN waste classifier: an image passes through convolution layers and is classified as organic or recyclable, 87 percent accuracy">
+<defs>
+<pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#2c2920" stroke-width="1"/></pattern>
+<radialGradient id="glow" cx="90%" cy="100%" r="70%"><stop offset="0" stop-color="#4ade80" stop-opacity=".3"/><stop offset="1" stop-color="#4ade80" stop-opacity="0"/></radialGradient>
+<marker id="a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#fb923c"/></marker>
+</defs>
+<rect width="640" height="360" fill="#1d1b16"/><rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#glow)"/>
+<g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#a39b8a" letter-spacing="1.4"><text x="40" y="44">CNN IMAGE CLASSIFIER</text></g>
+<g font-family="Georgia,serif" font-weight="700" font-size="21" fill="#f1ebdd"><text x="40" y="70">Waste detection for recycling</text></g>
+<g>
+<rect x="40" y="98" width="130" height="130" rx="14" fill="#26231c" stroke="#3a362b"/>
+<rect x="52" y="110" width="106" height="106" rx="8" fill="#14120e"/>
+<path d="M92 128h26v10l8 8v50a8 8 0 0 1-8 8h-26a8 8 0 0 1-8-8v-50l8-8z" fill="#60a5fa" fill-opacity=".85"/><rect x="95" y="122" width="20" height="8" rx="2" fill="#93c5fd"/><rect x="92" y="164" width="26" height="14" fill="#14120e" fill-opacity=".35"/>
+</g>
+<text x="105" y="250" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#a39b8a" letter-spacing="1">INPUT IMAGE</text>
+<path d="M176 163H200" stroke="#fb923c" stroke-width="2" marker-end="url(#a)"/>
+<g stroke="#fb923c" stroke-width="1.4">
+<g fill="#fb923c" fill-opacity=".18"><rect x="208" y="118" width="64" height="64" rx="3"/><rect x="216" y="126" width="64" height="64" rx="3"/><rect x="224" y="134" width="64" height="64" rx="3"/></g>
+<g fill="#fb923c" fill-opacity=".28"><rect x="304" y="132" width="44" height="44" rx="3"/><rect x="312" y="140" width="44" height="44" rx="3"/><rect x="320" y="148" width="44" height="44" rx="3"/></g>
+<g fill="#fb923c" fill-opacity=".4"><rect x="388" y="146" width="28" height="28" rx="3"/><rect x="396" y="154" width="28" height="28" rx="3"/></g>
+</g>
+<g font-family="ui-monospace,Menlo,monospace" font-size="10.5" fill="#a39b8a" letter-spacing=".8" text-anchor="middle"><text x="252" y="224">CONV</text><text x="334" y="224">POOL</text><text x="406" y="224">DENSE</text></g>
+<g stroke="#fb923c" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M432 163C454 163 456 126 474 126"/><path d="M432 163C454 163 456 200 474 200"/></g>
+<g font-family="system-ui,sans-serif" font-size="12.5" font-weight="600" fill="#f1ebdd">
+<rect x="478" y="104" width="124" height="44" rx="10" fill="#26231c" stroke="#4ade80"/><circle cx="498" cy="126" r="6" fill="#4ade80"/><text x="512" y="131">Organic</text>
+<rect x="478" y="178" width="124" height="44" rx="10" fill="#26231c" stroke="#60a5fa"/><circle cx="498" cy="200" r="6" fill="#60a5fa"/><text x="512" y="205">Recyclable</text>
+</g>
+<rect x="40" y="272" width="562" height="56" rx="14" fill="#14120e" stroke="#3a362b"/>
+<text x="62" y="310" font-family="Georgia,serif" font-weight="700" font-size="30" fill="#fb923c">87%</text>
+<text x="128" y="296" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#f1ebdd">accuracy</text>
+<text x="128" y="314" font-family="system-ui,sans-serif" font-size="12" fill="#a39b8a">tracked across model iterations</text>
+<rect x="400" y="292" width="180" height="10" rx="5" fill="#2c2920"/><rect x="400" y="292" width="157" height="10" rx="5" fill="#fb923c"/>
+</svg>

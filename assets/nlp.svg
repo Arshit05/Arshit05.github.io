@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="NLP pipeline: multilingual posts classified into three human-rights categories, F1 score 0.92 on 12,000+ entries">
+<defs>
+<pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#2c2920" stroke-width="1"/></pattern>
+<radialGradient id="glow" cx="10%" cy="100%" r="75%"><stop offset="0" stop-color="#60a5fa" stop-opacity=".28"/><stop offset="1" stop-color="#60a5fa" stop-opacity="0"/></radialGradient>
+<marker id="a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#fb923c"/></marker>
+</defs>
+<rect width="640" height="360" fill="#1d1b16"/><rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#glow)"/>
+<g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#a39b8a" letter-spacing="1.4"><text x="40" y="44">NLP CLASSIFIER</text></g>
+<g font-family="Georgia,serif" font-weight="700" font-size="21" fill="#f1ebdd"><text x="40" y="70">Human-rights signals in social media</text></g>
+<g>
+<rect x="40" y="96" width="150" height="46" rx="10" fill="#26231c" stroke="#3a362b"/><rect x="52" y="108" width="84" height="6" rx="3" fill="#6b655a"/><rect x="52" y="122" width="116" height="6" rx="3" fill="#4a463a"/><rect x="150" y="106" width="28" height="14" rx="7" fill="#14120e" stroke="#fb923c"/>
+<rect x="40" y="152" width="150" height="46" rx="10" fill="#26231c" stroke="#3a362b"/><rect x="52" y="164" width="100" height="6" rx="3" fill="#6b655a"/><rect x="52" y="178" width="70" height="6" rx="3" fill="#4a463a"/><rect x="150" y="162" width="28" height="14" rx="7" fill="#14120e" stroke="#60a5fa"/>
+<rect x="40" y="208" width="150" height="46" rx="10" fill="#26231c" stroke="#3a362b"/><rect x="52" y="220" width="76" height="6" rx="3" fill="#6b655a"/><rect x="52" y="234" width="110" height="6" rx="3" fill="#4a463a"/><rect x="150" y="218" width="28" height="14" rx="7" fill="#14120e" stroke="#4ade80"/>
+</g>
+<g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#a39b8a" letter-spacing="1"><text x="40" y="278">MULTILINGUAL POSTS</text></g>
+<g stroke="#fb923c" stroke-width="2" marker-end="url(#a)" fill="none"><path d="M194 119C214 119 214 175 232 175"/><path d="M194 175H230"/><path d="M194 231C214 231 214 175 232 175"/></g>
+<g><rect x="236" y="130" width="118" height="90" rx="16" fill="#26231c" stroke="#fb923c" stroke-width="1.5"/>
+<g fill="#fb923c"><circle cx="270" cy="160" r="5"/><circle cx="295" cy="150" r="5"/><circle cx="320" cy="160" r="5"/><circle cx="283" cy="185" r="5"/><circle cx="308" cy="185" r="5"/></g>
+<g fill="none" stroke="#fb923c" stroke-opacity=".5" stroke-width="1.5"><path d="M270 160L295 150L320 160M270 160L283 185L308 185L320 160M295 150L283 185M295 150L308 185"/></g>
+<text x="295" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#f1ebdd">NLP model</text></g>
+<g stroke="#fb923c" stroke-width="2" marker-end="url(#a)" fill="none"><path d="M358 175C380 175 384 118 408 118"/><path d="M358 175H406"/><path d="M358 175C380 175 384 232 408 232"/></g>
+<g font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#f1ebdd">
+<rect x="412" y="98" width="190" height="40" rx="10" fill="#26231c" stroke="#fbbf24"/><circle cx="430" cy="118" r="6" fill="#fbbf24"/><text x="444" y="123">Civil &amp; political</text>
+<rect x="412" y="156" width="190" height="40" rx="10" fill="#26231c" stroke="#60a5fa"/><circle cx="430" cy="176" r="6" fill="#60a5fa"/><text x="444" y="181">Economic, social, cultural</text>
+<rect x="412" y="214" width="190" height="40" rx="10" fill="#26231c" stroke="#4ade80"/><circle cx="430" cy="234" r="6" fill="#4ade80"/><text x="444" y="239">Collective &amp; solidarity</text>
+</g>
+<rect x="40" y="296" width="562" height="40" rx="12" fill="#14120e" stroke="#3a362b"/>
+<text x="60" y="322" font-family="Georgia,serif" font-weight="700" font-size="20" fill="#fb923c">F1 0.92</text>
+<text x="148" y="321" font-family="system-ui,sans-serif" font-size="13" fill="#a39b8a">on 12,000+ multilingual entries · anomaly detection + input validation</text>
+</svg>
