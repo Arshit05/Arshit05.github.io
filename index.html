@@ -8,6 +8,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://arshit05.github.io/">
 <meta property="og:type" content="website"><meta property="og:title" content="Arshit Dogra — Software Engineer Portfolio"><meta property="og:description" content="Python, REST API, data and ML projects validated against measurable results. Open to SDE, full-stack and AI/ML internships."><meta property="og:url" content="https://arshit05.github.io/">
+<meta property="og:image" content="https://arshit05.github.io/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://arshit05.github.io/assets/og.png">
 <meta name="theme-color" content="#f6f1e7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +38,11 @@ nav{display:flex;align-items:center;gap:28px;height:60px}
 .mono{font:500 14px var(--mono);text-decoration:none}
 nav{height:auto;min-height:60px;padding:8px 0;flex-wrap:wrap;gap:10px 20px}
 nav .links{display:flex;gap:8px;margin-left:auto;align-items:center;flex-wrap:wrap}
+.logo{order:0;display:inline-flex;align-items:center;gap:12px;text-decoration:none;justify-self:start}
+.logo .mark{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--ink);color:var(--accent);font:700 20px/1 var(--serif);letter-spacing:-.04em;box-shadow:3px 3px 0 var(--accent);transition:transform .15s,box-shadow .15s}
+.logo:hover .mark{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--accent)}
+.logo .name{font:600 17px var(--serif);color:var(--ink);letter-spacing:-.01em}
+@media (max-width:520px){.logo .name{display:none}}
 #theme{order:1;margin-left:auto}
 nav .links{order:2}
 @media (min-width:1180px){
@@ -79,21 +85,25 @@ nav .links{order:2}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tags span{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:3px 10px;background:var(--bg)}
 /* experience */
-.jobs{list-style:none;padding:0;counter-reset:j;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(32px,5vw,80px)}
-.jobs li:last-child{border-bottom:0}
-.jobs li{border-bottom:1px solid var(--line);align-self:start}
+.jobs{list-style:none;padding:0;counter-reset:j;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 @media (max-width:1000px){.jobs{grid-template-columns:1fr}}
-.jobs li{border-top:1px solid var(--line)}
-.jobs li:last-child{border-bottom:1px solid var(--line)}
-details summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:baseline;padding:20px 0}
+.jobs>li{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:5px 5px 0 var(--line);transition:transform .2s,box-shadow .2s,border-color .2s}
+.jobs>li:hover,.jobs>li:focus-within{border-color:var(--accent);transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--accent)}
+details summary{list-style:none;cursor:pointer;position:relative;display:grid;grid-template-columns:48px 1fr;gap:6px 12px;align-items:baseline;padding:26px 56px 18px 26px}
 details summary::-webkit-details-marker{display:none}
-.jobs summary::before{counter-increment:j;content:"0" counter(j);font:400 13px var(--mono);color:var(--accent)}
-summary .role{font:600 20px var(--serif)}
-summary .role small{display:block;font:400 14px var(--sans);color:var(--muted)}
-summary .when{font:400 13px var(--mono);color:var(--muted)}
-.detail{padding:0 0 24px 60px;color:var(--muted)}
-.detail ul{padding-left:18px;margin-bottom:12px}
-.detail .stack{font:400 13px var(--mono);color:var(--accent)}
+details summary::after{content:"+";position:absolute;right:22px;top:22px;width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font:500 16px var(--mono);color:var(--accent);background:var(--bg)}
+details[open] summary::after{content:"\2212"}
+.jobs summary::before{counter-increment:j;content:"0" counter(j);font:500 13px var(--mono);color:var(--accent)}
+summary .role{font:600 22px var(--serif)}
+summary .role small{display:block;font:400 14px var(--sans);color:var(--muted);margin-top:2px}
+summary .when{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:8px;margin-top:6px;white-space:nowrap;font:500 12px var(--mono);letter-spacing:.04em;color:var(--accent);border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:4px 12px}
+summary .when::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.detail{padding:4px 26px 26px 26px;color:var(--muted);border-top:1px dashed var(--line);margin:0 26px;padding-left:0;padding-right:0;padding-top:18px}
+.detail ul{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:12px}
+.detail li{position:relative;padding-left:26px;font-size:15px;line-height:1.6}
+.detail li::before{content:"\2192";position:absolute;left:0;top:0;color:var(--accent);font:500 14px var(--mono)}
+.detail .stack{display:flex;flex-wrap:wrap;gap:8px}
+.detail .stack span{font:500 12px var(--mono);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:4px 10px}
 details[open] .role{color:var(--accent)}
 /* work */
 .work{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
@@ -133,7 +143,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   section{padding:48px 0}
   .about{grid-template-columns:1fr}.photo{max-width:160px}
   .work{grid-template-columns:1fr}
-  details summary{grid-template-columns:36px 1fr}summary .when{grid-column:2}
+  details summary{grid-template-columns:36px 1fr}
   .detail{padding-left:48px}
 }
 
@@ -177,10 +187,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cta-band .btn{border-color:var(--bg);color:var(--bg)}
 .cta-band .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 @media (max-width:900px){.scan .wrap{grid-template-columns:1fr}.scan .q,.scan .q+.q{padding:20px 0;border-left:0;border-top:1px solid var(--line)}.three{grid-template-columns:1fr}}
+
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:-8px 0 24px}
+.filters .nbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.proj[hidden]{display:none}
+/* typing */
+.ch{opacity:0}.ch.on{opacity:1}
+.caret{display:inline-block;width:.08em;height:.85em;margin-left:2px;background:var(--accent);vertical-align:-.05em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+/* contact form */
+.cform{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,36px);display:grid;gap:16px;box-shadow:6px 6px 0 var(--line)}
+.cform h3{font:600 24px var(--serif)}
+.cform .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cform label{display:grid;gap:6px;font:500 13px var(--mono);letter-spacing:.04em;color:var(--muted)}
+.cform input,.cform textarea{font:400 16px var(--sans);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%;resize:vertical}
+.cform input:focus,.cform textarea:focus{outline:3px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.cform [aria-invalid="true"]{border-color:#dc2626}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cform .actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.cform button.btn{cursor:pointer;font:500 16px var(--sans)}
+.cform button[disabled]{opacity:.6;cursor:wait}
+#fstatus{font-size:14px;color:var(--muted)}#fstatus.ok{color:#16a34a}#fstatus.err{color:#dc2626}
+@media (max-width:720px){.cform .row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav aria-label="Primary">
+  <a class="logo" href="#top" aria-label="Arshit Dogra, back to top"><span class="mark">AD</span><span class="name">Arshit Dogra</span></a>
   <div class="links">
     <a class="nbtn" href="#work">Projects</a><a class="nbtn" href="#how">Skills</a><a class="nbtn" href="#problems">Focus</a><a class="nbtn" href="#experience">Experience</a><a class="nbtn" href="#contact">Contact</a>
     <span class="sep" aria-hidden="true"></span>
@@ -193,16 +227,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section class="hero"><div class="wrap">
   <div>
     <div class="kicker"><i></i> Open to SDE · Full Stack · AI/ML internships</div>
-    <h1>I build <em>reliable software</em>: APIs, data pipelines and ML systems, checked against real numbers.</h1>
+    <h1>I build <em id="typed">reliable software</em>: APIs, data pipelines and ML systems, checked against real numbers.</h1>
     <p>Arshit Dogra — B.Tech CSE (2026). I write Python and REST-based systems, add validation and error handling, and measure the result before calling it done. Product experience from my current internship helps me build the right thing.</p>
     <div class="btns"><a class="btn primary" href="#work">See my projects</a><a class="btn" href="#contact">Talk to me</a></div>
     <div class="lanes" aria-label="Focus areas"><span class="t">Backend &amp; APIs</span><span class="d">Data &amp; ML</span><span class="p">Product sense</span></div>
   </div>
   <div class="snap" aria-label="Proof points">
-    <div><b>0.92</b><small>F1-score on an NLP system over 12,000+ multilingual entries</small></div>
-    <div><b>87%</b><small>accuracy on a CNN waste classifier</small></div>
-    <div><b>2</b><small>internships: web dev at Craftisque, product at NestorBird</small></div>
-    <div><b>4</b><small>projects with problem, build and result below</small></div>
+    <div><b data-count="0.92" data-dec="2">0.92</b><small>F1-score on an NLP system over 12,000+ multilingual entries</small></div>
+    <div><b data-count="87" data-suffix="%">87%</b><small>accuracy on a CNN waste classifier</small></div>
+    <div><b data-count="2">2</b><small>internships: web dev at Craftisque, product at NestorBird</small></div>
+    <div><b data-count="4">4</b><small>projects with problem, build and result below</small></div>
   </div>
 </div></section>
 
@@ -214,20 +248,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section id="work"><div class="wrap rv">
   <div class="eyebrow">Projects</div><h2>What I built, and what it did</h2>
+  <div class="filters" role="group" aria-label="Filter projects"><button type="button" class="nbtn" data-f="all" aria-pressed="true">All</button><button type="button" class="nbtn" data-f="backend" aria-pressed="false">Backend &amp; APIs</button><button type="button" class="nbtn" data-f="data" aria-pressed="false">Data &amp; ML</button><button type="button" class="nbtn" data-f="product" aria-pressed="false">Product</button></div>
   <div class="work">
-    <a class="proj case" href="work/yturl.html"><div class="shot"><img src="assets/yturl.svg" alt="YTURL.ai pipeline: YouTube data through REST APIs and an LLM into validated analytics" loading="lazy"></div><div class="body">
+    <a class="proj case" data-tags="backend data" href="work/yturl.html"><div class="shot"><img src="assets/yturl.svg" alt="YTURL.ai pipeline: YouTube data through REST APIs and an LLM into validated analytics" loading="lazy"></div><div class="body">
       <div class="meta"><b>01</b> · Data + Tech</div><h3>YTURL.ai</h3>
       <div class="flow"><div><strong>Problem</strong><span>Raw YouTube data is unstructured and hard to trust.</span></div><div><strong>Built</strong><span>Python pipeline joining REST APIs and LLM output.</span></div><div><strong>Result</strong><span>Structured analytics with validation that flags bad data before reporting.</span></div></div>
       <div class="stack">Python · REST APIs · LLMs · Pandas · Git</div><div class="more">Read the case study →</div></div></a>
-    <a class="proj case" href="work/nlp-human-rights.html"><div class="shot"><img src="assets/nlp.svg" alt="NLP pipeline classifying multilingual posts into three human-rights categories, F1 0.92" loading="lazy"></div><div class="body">
+    <a class="proj case" data-tags="data" href="work/nlp-human-rights.html"><div class="shot"><img src="assets/nlp.svg" alt="NLP pipeline classifying multilingual posts into three human-rights categories, F1 0.92" loading="lazy"></div><div class="body">
       <div class="meta"><b>02</b> · Data + NLP</div><h3>Human-rights violations in social media</h3>
       <div class="flow"><div><strong>Problem</strong><span>Finding violations across thousands of multilingual posts.</span></div><div><strong>Built</strong><span>NLP pipeline with anomaly detection and input validation.</span></div><div><strong>Result</strong><span>F1-score 0.92 on 12,000+ entries.</span></div></div>
       <div class="stack">Python · NLP · Pandas</div><div class="more">Read the case study →</div></div></a>
-    <a class="proj case" href="work/waste-detection.html"><div class="shot"><img src="assets/waste.svg" alt="CNN classifying waste images as organic or recyclable, 87% accuracy" loading="lazy"></div><div class="body">
+    <a class="proj case" data-tags="data" href="work/waste-detection.html"><div class="shot"><img src="assets/waste.svg" alt="CNN classifying waste images as organic or recyclable, 87% accuracy" loading="lazy"></div><div class="body">
       <div class="meta"><b>03</b> · ML</div><h3>Waste Detection for Recycling</h3>
       <div class="flow"><div><strong>Problem</strong><span>Sorting waste for recycling is manual.</span></div><div><strong>Built</strong><span>CNN image classifier, tracked across model iterations.</span></div><div><strong>Result</strong><span>87% accuracy.</span></div></div>
       <div class="stack">Python · CNN · Machine Learning</div><div class="more">Read the case study →</div></div></a>
-    <a class="proj case" href="https://warehouse-cku3.apps.neander.ai" target="_blank" rel="noopener"><div class="shot"><img src="assets/warehouse.svg" alt="Warehouse operations dashboard with stock KPIs, expiring batches and a storage rack" loading="lazy"></div><div class="body">
+    <a class="proj case" data-tags="product" href="https://warehouse-cku3.apps.neander.ai" target="_blank" rel="noopener"><div class="shot"><img src="assets/warehouse.svg" alt="Warehouse operations dashboard with stock KPIs, expiring batches and a storage rack" loading="lazy"></div><div class="body">
       <div class="meta"><b>04</b> · Product <span class="badge">NEW</span></div><h3>Retail Warehouse Operations</h3>
       <div class="flow"><div><strong>Problem</strong><span>Managing retail warehouse operations in one system.</span></div><div><strong>Built</strong><span>A warehouse management product concept, live and deployed.</span></div><div><strong>Result</strong><span>Open the live app to try it.</span></div></div>
       <div class="stack">Product design · ERP-style workflows</div><div class="more">Open live app ↗</div></div></a>
@@ -261,17 +296,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="experience"><div class="wrap rv">
   <div class="eyebrow">Delivered in teams</div><h2>Where I've done it</h2>
   <ul class="jobs">
-    <li><details open><summary><span class="role">Web Developer Intern<small>Craftisque</small></span><span></span><span class="when">Jun 2025 — Jul 2025</span></summary>
+    <li><details open><summary><span class="role">Web Developer Intern<small>Craftisque</small></span><span class="when">Jun 2025 — Jul 2025</span></summary>
       <div class="detail"><ul>
         <li>Integrated front-end components with backend REST APIs, enabling dynamic data display.</li>
         <li>Added input validation and error handling on API calls, reducing data-handling errors and improving stability.</li>
         <li>Collaborated with the team using Git-based workflows to build and debug features.</li>
-      </ul><div class="stack">REST APIs · Git · Front-end</div></div></details></li>
-    <li><details open><summary><span class="role">Product Management Intern<small>NestorBird · Mohali (on-site)</small></span><span></span><span class="when">Jun 2026 — Present</span></summary>
+      </ul><div class="stack"><span>REST APIs</span><span>Git</span><span>Front-end</span></div></div></details></li>
+    <li><details open><summary><span class="role">Product Management Intern<small>NestorBird · Mohali (on-site)</small></span><span class="when">Jun 2026 — Present</span></summary>
       <div class="detail"><ul>
         <li>Worked daily with engineering and design in Agile sprints (JIRA), turning ERPNext / Frappe business requirements into PRDs and user stories with testable acceptance criteria.</li>
         <li>Validated requirements in ERPNext / Frappe standard workflows before development, giving developers clear scope; analysed user-interview feedback to prioritise backlog fixes.</li>
-      </ul><div class="stack">ERPNext · Frappe · JIRA · Agile</div></div></details></li>
+      </ul><div class="stack"><span>ERPNext</span><span>Frappe</span><span>JIRA</span><span>Agile</span></div></div></details></li>
   </ul>
 </div></section>
 
@@ -294,6 +329,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div><div class="eyebrow" style="color:var(--accent)">Contact</div><h2>Hiring for SDE, full-stack or AI/ML?</h2><p style="opacity:.75;margin-top:8px">I'm looking for software engineering internships. Let's talk.</p></div>
     <div class="btns"><a class="btn primary" href="mailto:arshitdogra5055@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/arshit">LinkedIn</a><a class="btn" href="https://github.com/Arshit05">GitHub</a><a class="btn" data-resume href="Arshit_Dogra_SDE_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>
   </div>
+  <form class="cform" id="cform" novalidate>
+    <h3>Or send a message</h3>
+    <div class="row"><label>Name<input name="name" autocomplete="name" required></label><label>Email<input name="email" type="email" autocomplete="email" required></label></div>
+    <label>Message<textarea name="message" rows="5" required></textarea></label>
+    <input class="hp" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="actions"><button class="btn primary" type="submit">Send message</button><p id="fstatus" role="status" aria-live="polite"></p></div>
+  </form>
 </div></section>
 </main>
 
@@ -312,6 +354,33 @@ btn.onclick=()=>{
 const links=[...document.querySelectorAll('nav .links a[href^="#"]')];
 const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>{l.toggleAttribute('aria-current',false);if(l.hash==='#'+e.target.id)l.setAttribute('aria-current','true')})}),{rootMargin:'-40% 0px -55% 0px'});
 document.querySelectorAll('section[id]').forEach(s=>so.observe(s));
+/* animated counters */
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const el=e.target,to=+el.dataset.count,d=+(el.dataset.dec||0),suf=el.dataset.suffix||'',t0=performance.now(),dur=1400;
+  const step=t=>{const p=Math.min((t-t0)/dur,1),v=to*(1-Math.pow(1-p,3));el.textContent=v.toFixed(d)+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}),{threshold:.6});
+if(!rm)document.querySelectorAll('[data-count]').forEach(el=>{el.textContent=(0).toFixed(+(el.dataset.dec||0))+(el.dataset.suffix||'');co.observe(el)});
+/* typing headline */
+(()=>{const el=document.getElementById('typed');if(!el||rm)return;const txt=el.textContent;el.setAttribute('aria-label',txt);el.textContent='';
+  const chars=[...txt].map(c=>{const s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');s.textContent=c;el.appendChild(s);return s});
+  const caret=document.createElement('span');caret.className='caret';caret.setAttribute('aria-hidden','true');el.appendChild(caret);
+  let i=0;setTimeout(function tick(){if(i<chars.length){chars[i++].classList.add('on');setTimeout(tick,55)}else setTimeout(()=>caret.remove(),1800)},500)})();
+/* project filters */
+const fbtns=[...document.querySelectorAll('.filters [data-f]')],cards=[...document.querySelectorAll('.work .proj')];
+fbtns.forEach(b=>b.onclick=()=>{fbtns.forEach(x=>x.setAttribute('aria-pressed',x===b));cards.forEach(c=>{c.hidden=!(b.dataset.f==='all'||(c.dataset.tags||'').split(' ').includes(b.dataset.f))})});
+/* contact form: set FORM_ENDPOINT to a Formspree URL (https://formspree.io/f/xxxx) to send without an email app */
+const FORM_ENDPOINT='',MAIL='arshitdogra5055@gmail.com';
+const cf=document.getElementById('cform'),fs=document.getElementById('fstatus');
+cf.addEventListener('submit',async ev=>{ev.preventDefault();fs.className='';
+  const f=new FormData(cf);if(f.get('_gotcha'))return;
+  const name=(f.get('name')||'').trim(),email=(f.get('email')||'').trim(),msg=(f.get('message')||'').trim();
+  let bad=false;[...cf.querySelectorAll('[name=name],[name=email],[name=message]')].forEach(i=>{const v=i.value.trim(),ok=v&&(i.type!=='email'||/^\S+@\S+\.\S+$/.test(v));i.setAttribute('aria-invalid',!ok);if(!ok)bad=true});
+  if(bad){fs.className='err';fs.textContent='Please fill in your name, a valid email and a message.';return}
+  if(!FORM_ENDPOINT){location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Portfolio message from '+name)+'&body='+encodeURIComponent(msg+'\n\n'+name+' <'+email+'>');fs.className='ok';fs.textContent='Opening your email app with the message ready to send.';return}
+  const btn=cf.querySelector('button');btn.disabled=true;fs.textContent='Sending…';
+  try{const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({name,email,message:msg})});
+    if(!r.ok)throw 0;cf.reset();fs.className='ok';fs.textContent='Thanks! Your message was sent.'}
+  catch(e){fs.className='err';fs.textContent='Could not send. Please email '+MAIL+' directly.'}
+  btn.disabled=false});
 </script>
 </body>
 </html>
